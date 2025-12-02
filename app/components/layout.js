@@ -181,7 +181,7 @@ sm:hidden w-[100%] bg-black h-[850px]">
     </div>
         </nav>
 
-        <div className="absolute text-left top-[14rem] left-[10rem] right-[10rem]">
+        <div className="absolute text-left top-[10rem] left-[10rem] right-[10rem]">
         <h2 className="font-barlow text-white
       text-3xl relative font-bold uppercase">
       Performance marketing for SME<span className="lowercase">s</span>
