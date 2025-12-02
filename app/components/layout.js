@@ -225,9 +225,9 @@ w-[60%]
 </header>
 
 
-<header className="md:hidden w-[100%] mobiles max-w-[649px] bg-black"> 
+<header className="md:hidden w-[100%] mobiles max-w-[649px]"> 
 
-<div className="relative w-full h-[620px] top-[2rem]">
+<div className="relative w-full h-[620px]">
       <Image
      className=""
         alt=""
