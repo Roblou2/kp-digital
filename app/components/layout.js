@@ -225,9 +225,9 @@ w-[60%]
 </header>
 
 
-<header className="md:hidden w-[100%] mobiles max-w-[649px]"> 
+<header className="md:hidden w-[100%] mobiles max-w-[649px] bg-black"> 
 
-<div className="relative w-full h-[500px]">
+<div className="relative w-full h-[700px] top-[2rem]">
       <Image
      className=""
         alt=""
@@ -261,7 +261,7 @@ onClick={onToggleMenu}
 </div>
 
       </div>
-<div className="top-[6rem] max-w-[649px] absolute  
+<div className="top-[12rem] max-w-[649px] absolute  
 right-[3rem] left-[3rem]">
      <h2 className="font-barlow text-white
       text-xl relative font-bold uppercase leading-5">
@@ -295,7 +295,7 @@ w-[100%]
       <button className="hero-contact
        box-content 
         text-white bg-pink-600
-        font-bold font-barlow uppercase py-[6px] px-[6px]
+        font-bold font-barlow uppercase py-[6px] px-[12px]
         rounded shadow-[1px_1px_5px_-1px_#4c4c4c]">
        <Link href="/contact">Book a free strategy call</Link>
        
