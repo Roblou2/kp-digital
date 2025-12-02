@@ -1,9 +1,8 @@
-"use client";
+
 import LayoutBlogPost from "./layout-blog-post";
-import BlogPostClient from "./BlogPostClient";
 import Content from "./blog-content";
 
-export default function BlogPostWrapper({ title, hero_image, hero_image_alt, mdxSource }) {
+export default function BlogPostWrapper({ title, hero_image, hero_image_alt, children }) {
   return (
     <LayoutBlogPost title={title}>
          <div className="px-[20rem] xl:block
@@ -22,7 +21,7 @@ bg-black md:w-[100%] px-[10rem]">
    <img src={hero_image} alt={hero_image_alt}/>
    </div>
       <Content>
-      <BlogPostClient mdxSource={mdxSource} />
+{children}
       </Content>
     </LayoutBlogPost>
   );
