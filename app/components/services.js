@@ -37,7 +37,7 @@ bg-no-repeat"></div>
      design and marketing. When you partner with us, our eclectic
       mix of digital 
      skills and expertise are available on hand, and all in one place. Whether 
-     you're wanting to get online, refine your
+     you&apos;re wanting to get online, refine your
      marketing materials or improve the performance of your existing
      digital assets, our range of services on offer
     can take care of your fundamental digital business needs.        
@@ -73,7 +73,7 @@ bg-no-repeat bg-[url('/images/service-comp-bg-mobs.png')]
      design and marketing. When you partner with us, our eclectic
       mix of digital 
      skills and expertise are available on hand, and all in one place. Whether 
-     you're wanting to get online, refine your
+     you&apos;re wanting to get online, refine your
      marketing materials or improve the performance of your existing
      digital assets, our range of services on offer
     can take care of your fundamental digital business needs.        
@@ -114,7 +114,7 @@ bg-no-repeat"></div>
      design and marketing. When you partner with us, our eclectic
       mix of digital 
      skills and expertise are available on hand, and all in one place. Whether 
-     you're wanting to get online, refine your
+     you&apos;re wanting to get online, refine your
      marketing materials or improve the performance of your existing
      digital assets, our range of services on offer
     can take care of your fundamental digital business needs.        
