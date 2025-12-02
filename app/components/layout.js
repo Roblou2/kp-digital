@@ -290,7 +290,7 @@ w-[100%]
           </h3>
 
           <div className="font-barlow  
-      text-lg relative top-[2rem] w-[100%]">
+      text-[1rem] relative top-[2rem] w-[100%]">
       <button className="hero-contact
        box-content 
         text-white bg-pink-600
