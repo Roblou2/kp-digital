@@ -165,8 +165,8 @@ z-[-50] xl:top-[-2rem]
 whileInView={{opacity: 1}}
 transition={{delay: 0.5, duration: 1}}
 viewport={{ once: true }}
-    className="md:w-[70%]
-    xl:w-[400px] w-[90%] shadow-xl">
+    className="md:w-[50%]
+    xl:w-[400px] w-[90%] shadow-xl rounded-3xl">
         
     <Image src="/images/services-home-wordpress.png"
 alt=""
