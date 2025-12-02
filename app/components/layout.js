@@ -160,8 +160,8 @@ sm:hidden w-[100%] bg-black h-[850px]">
              
     <Image 
        src="/images/killer-logo-black-bg-500.png"
-       width={100}
-       height={100}
+       width={70}
+       height={70}
        alt="Killer performance digital logo"
  
        /> </Link>  

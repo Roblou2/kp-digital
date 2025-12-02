@@ -67,10 +67,10 @@ fill={true}
 
                
       <Link href="/">  <Image 
-       src="/images/sleek-digital-logo-white-250.png"
-       width={100}
-       height={100}
-       alt="sleek digital logo"
+       src="/images/killer-logo-black-bg-500.png"
+       width={120}
+       height={120}
+       alt="Killer performance digital logo"
  
        /></Link>
      
@@ -125,10 +125,10 @@ fill={true}
                
                     
                <Link href="/"><Image 
-       src="/images/sleek-digital-logo-white-250.png"
+       src="/images/killer-logo-black-bg-500.png"
        width={70}
        height={70}
-       alt="sleek digital logo"
+       alt="Killer performance digital logo"
 
        /> </Link></h2>
      
@@ -185,10 +185,10 @@ fill={true}
           <h2 className="font-sans uppercase font-bold text-2xl">
                
           <Link href="/"><Image 
-       src="/images/sleek-digital-logo-white-250.png"
-       width={70}
-       height={70}
-       alt="sleek digital logo"
+        src="/images/killer-logo-black-bg-500.png"
+        height={80}
+        width={80}
+       alt="Killer performance digital logo"
    
        /> </Link> </h2>
     
@@ -235,10 +235,10 @@ fill={true}
     
                
           <Link href="/"><Image 
-       src="/images/sleek-digital-logo-white-250.png"
-       width={70}
-       height={70}
-       alt="sleek digital logo"
+     src="/images/killer-logo-black-bg-500.png"
+     height={80}
+     width={80}
+       alt="Killer performance digital logo"
 
        /> </Link> 
     
@@ -319,12 +319,12 @@ border-t border-dashed border-white"></div>
 
 
       <div className="flex flex-col flex-nowrap">
-<p className="text-sm text-white font-barlow py-2">© Sleek Digital</p>
+<p className="text-sm text-white font-barlow py-2">© Killer Performance Digital</p>
 
 <div className="flex flex-col 
 font-barlow"> 
    <p className='text-md text-white font-barlow'>
-  info@sleekdigitaldesigns.com</p>
+  info@killerperformancedigital.com</p>
 </div>
 
       </div>
@@ -380,12 +380,12 @@ border-t border-dashed border-white"></div>
 
 
       <div className="flex flex-col flex-nowrap">
-<p className="text-sm text-white font-barlow py-2">© Sleek Digital</p>
+<p className="text-sm text-white font-barlow py-2">© Killer Performance Digital</p>
 
 <div className="flex flex-col 
 font-barlow"> 
    <p className='text-md text-white font-barlow'>
-  info@sleekdigitaldesigns.com</p>
+  info@killerperformancedigital.com</p>
 
 </div>
 
@@ -444,12 +444,12 @@ border-t border-dashed border-white"></div>
 
 
       <div className="flex flex-col flex-nowrap">
-<p className="text-sm text-white font-barlow py-2">© Sleek Digital</p>
+<p className="text-sm text-white font-barlow py-2">© Killer Performance Digital</p>
 
 <div className="flex flex-col 
 font-barlow"> 
    <p className='text-md text-white font-barlow'>
-  info@sleekdigitaldesigns.com</p>
+  info@killerperformancedigital.com</p>
 </div>
 
       </div>
@@ -508,12 +508,12 @@ border-t border-dashed border-white"></div>
 
 
       <div className="flex flex-col flex-nowrap">
-<p className="text-sm text-white font-barlow py-2">© Sleek Digital</p>
+<p className="text-sm text-white font-barlow py-2">© Killer Performance Digital</p>
 
 <div className="flex flex-col 
 font-barlow"> 
    <p className='text-md text-white font-barlow'>
-  info@sleekdigitaldesigns.com</p>
+  info@killerperformancedigital.com</p>
 </div>
 
       </div>
