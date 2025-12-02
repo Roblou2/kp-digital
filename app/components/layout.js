@@ -261,7 +261,7 @@ onClick={onToggleMenu}
 </div>
 
       </div>
-<div className="top-[10rem] max-w-[649px] absolute  
+<div className="top-[8rem] max-w-[649px] absolute  
 right-[3rem] left-[3rem]">
      <h2 className="font-barlow text-white
       text-xl relative font-bold uppercase leading-5">
