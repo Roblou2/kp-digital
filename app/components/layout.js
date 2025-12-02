@@ -227,7 +227,7 @@ w-[60%]
 
 <header className="md:hidden w-[100%] mobiles max-w-[649px] bg-black"> 
 
-<div className="relative w-full h-[700px] top-[2rem]">
+<div className="relative w-full h-[620px] top-[2rem]">
       <Image
      className=""
         alt=""
@@ -261,7 +261,7 @@ onClick={onToggleMenu}
 </div>
 
       </div>
-<div className="top-[12rem] max-w-[649px] absolute  
+<div className="top-[10rem] max-w-[649px] absolute  
 right-[3rem] left-[3rem]">
      <h2 className="font-barlow text-white
       text-xl relative font-bold uppercase leading-5">
