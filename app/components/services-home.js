@@ -166,9 +166,9 @@ whileInView={{opacity: 1}}
 transition={{delay: 0.5, duration: 1}}
 viewport={{ once: true }}
     className="md:w-[50%]
-    xl:w-[400px] w-[90%] shadow-xl rounded-3xl">
+    xl:w-[800px] w-[90%] shadow-xl">
         
-    <Image src="/images/services-home-wordpress.png"
+    <Image src="/images/services-home-wordpress.jpg"
 alt=""
 width={800}
 height={400}
@@ -251,7 +251,7 @@ viewport={{ once: true }}
             </div>
         <h3 className="md:text-center lg:text-left sm:text-3xl md:text-3xl xl:text-4xl
       text-white">{props.serviceFour}</h3>
-        <p className="text-xl neon-red uppercase">Marketing Performance</p>
+        <p className="text-xl neon-red uppercase">Marketing campaigns & conversion</p>
         <p className="text-xl md:text-2xl text-white py-4 md:text-center lg:text-left
         lg:w-[80%] md:w-[80%]">{props.serviceFourTxt}</p>
             <ReadMoreButton bg="bg-[#FD0E35]"/>

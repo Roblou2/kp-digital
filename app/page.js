@@ -60,7 +60,7 @@ serviceOneTxt = "Using cutting-edge tech and programming, we make websites which
 serviceTwoTxt = "Grab your customers' attention and implant your brand's signature sound into the minds of your customers with copy crafted by experts."
 serviceThreeTxt = "Modern, reliable WordPress development that improves speed, structure, usability, and overall performance — giving your business a stronger, more effective online presence."
 serviceFourTxt = "Purpose-built landing pages crafted to persuade, convert, and support your marketing campaigns using clear messaging, clean design, and data-driven optimisation."
-serviceFiveTxt = "Entry-level Google Ads campaigns tailored for small budgets, focused on relevant traffic, measurable impact, and building a predictable flow of leads."
+serviceFiveTxt = "Google Ads campaigns tailored for every kind of budget, focused on relevant traffic, measurable impact, and building a predictable flow of leads."
 serviceSixTxt = "Accurate tracking and analytics implementation that gives you clarity on performance, helps avoid wasted spend, and reveals exactly what drives your results."
 />
 <ContactUs/>

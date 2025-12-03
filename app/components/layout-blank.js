@@ -57,8 +57,8 @@ w-[100%] bg-black">
  
        <Link href="/"><Image 
        src="/images/killer-logo-black-bg-500.png"
-       width={350}
-       height={350}
+       width={120}
+       height={120}
        alt="Killer performance logo"
        
        /> </Link>  
@@ -95,8 +95,8 @@ sm:hidden w-[100%] bg-black">
              
     <Image 
        src="/images/killer-logo-black-bg-500.png"
-       width={300}
-       height={300}
+       width={70}
+       height={70}
        alt="Killer performance logo"
  
        /> </Link>  
@@ -133,8 +133,8 @@ sm:hidden w-[100%] bg-black">
 
        <Link href="/"><Image 
        src="/images/killer-logo-black-bg-500.png"
-       height={100}
-       width={150}
+       height={80}
+       width={80}
        alt="Killer performance logo"
 
        /> </Link> 
@@ -164,8 +164,8 @@ sm:hidden lg:hidden w-[100%] tablets bg-black">
      
       <Link href="/"><Image 
        src="/images/killer-logo-black-bg-500.png"
-       width={100}
-       height={150}
+       width={80}
+       height={80}
        alt="Killer performance logo"
        /> 
         
