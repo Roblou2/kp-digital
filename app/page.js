@@ -6,20 +6,20 @@ import Layout from './components/layout.js'
 import Head from 'next/head';
 
 export const metadata = {
-  title: "Performance marketing agency | SDD",
+  title: "Performance marketing agency | KP Digital",
   description: "We are the first choice digital marketing agency. Learn how our digital marketing services can grow your business",
 
   openGraph: {
-    title: "Performance marketing agency | SDD",
+    title: "Performance marketing agency | KP Digital",
     description: "We are the first choice digital marketing agency. Learn how our digital marketing services can grow your business",
-    url: "https://sleekdigitaldesigns.com/",
-    siteName: "Sleek Digital Designs",
+    url: "https://killerperformancedigital.com",
+    siteName: "Killer Performance Digital",
     images: [
       {
-        url: "https://sleek-digital-logo-black-250.png",
+        url: "/images/killer-logo-black-bg-250.png",
         width: 600,
         height: 300,
-        alt: "Sleek Digital Designs OG image",
+        alt: "Killer Performance Digital OG image",
       },
     ],
     locale: "en_US",
@@ -28,9 +28,9 @@ export const metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: "Performance marketing agency | SDD",
+    title: "Performance marketing agency | KP Digital",
     description: "We are the first choice digital marketing agency. Learn how our digital marketing services can grow your business",
-    images: ["https://sleek-digital-logo-black-250.png"],
+    images: ["/images/killer-logo-black-bg-250.png"],
   },
 };
 
