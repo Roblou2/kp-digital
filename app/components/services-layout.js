@@ -353,25 +353,38 @@ fill={true}
         </nav>
 
       <div className="absolute text-left top-[16rem] left-[10rem] right-[10rem]
-      flex flex-row justify-between items-start">
+      flex flex-row justify-between items-start gap-48">
 
        <div className="w-1/2">
-    <h1 className="font-barlow text-white
- text-3xl relative font-bold uppercase pb-8">
+  <div className="relative top-[12rem]">
+       
+    <h1 className="text-white
+ text-5xl relative font-bold pb-8 w-full">
       Bad copy costs money. 
           </h1>
-      <h1 className="font-barlow text-white
-       text-3xl relative font-bold uppercase pb-4">
-Great copy   <span className="neon-red">makes</span> money!
+      <h1 className="text-white
+       text-5xl relative font-bold pb-4 w-full">
+<span className="relative inline-block">Great copy   <span className="neon-red">makes</span> money!
+
+  <span
+        className="
+          absolute left-0 -bottom-8
+          h-[2px] w-0 bg-white opacity-50
+          transition-all duration-500
+          w-[120%]
+        "
+      />
+   
+</span>
           </h1>
       
-          <h3 className="font-sans font-semibold text-white
-     text-2xl relative">
-Conversion-focused copywriting for 
-businesses that want stronger 
+          <h3 className="font-semibold text-white
+     text-xl relative w-full">
+Conversion-focused copywriting for businesses that want stronger 
 messaging, more and better leads and marketing 
 that actually works.
     </h3>
+</div>
 </div>
 
 
@@ -538,28 +551,41 @@ onClick={onToggleMenu}
       </div>
 <div className="top-[8rem] max-w-[649px] absolute  
 right-[3rem] left-[3rem]">
-  <h1 className="font-barlow text-white
- text-xl relative font-bold uppercase">
+ <div className="relative top-[2rem]">
+       
+    <h1 className="text-white
+ text-4xl relative font-bold pb-8 w-full">
       Bad copy costs money. 
           </h1>
-      <h1 className="font-barlow text-white
-       text-xl relative font-bold uppercase">
-Great copy   <span className="neon-red">makes</span> money!
+      <h1 className="text-white
+       text-4xl relative font-bold pb-4 w-full">
+<span className="relative inline-block">Great copy   <span className="neon-red">makes</span> money!
+
+  <span
+        className="
+          absolute left-0 -bottom-8
+          h-[2px] w-0 bg-white opacity-50
+          transition-all duration-500
+          w-[100%]
+        "
+      />
+   
+</span>
           </h1>
       
-          <h3 className="font-sans font-semibold text-white
-     text-lg relative my-[0px]">
-Conversion-focused copywriting for 
-businesses that want stronger 
+          <h3 className="font-semibold text-white
+     text-lg relative w-full">
+Conversion-focused copywriting for businesses that want stronger 
 messaging, more and better leads and marketing 
 that actually works.
     </h3>
+</div>
           </div>
 
            <form
   className="
     rounded-2xl border border-slate-800 bg-white
-    p-4 mx-[3rem] relative mt-[-10rem]
+    p-4 mx-[3rem] relative mt-[2rem]
     shadow-md shadow-black/30
     backdrop-blur">
     
@@ -699,22 +725,35 @@ onClick={onToggleMenu}
 flex flex-row justify-between items-center">
   
    <div className="w-1/2">
-    <h1 className="font-barlow text-white
- text-2xl relative font-bold uppercase pb-8">
+  <div className="relative top-[2rem]">
+       
+    <h1 className="text-white
+ text-4xl relative font-bold pb-8 w-full">
       Bad copy costs money. 
           </h1>
-      <h1 className="font-barlow text-white
-       text-2xl relative font-bold uppercase pb-4">
-Great copy   <span className="neon-red">makes</span> money!
+      <h1 className="text-white
+       text-4xl relative font-bold pb-4 w-full">
+<span className="relative inline-block">Great copy   <span className="neon-red">makes</span> money!
+
+  <span
+        className="
+          absolute left-0 -bottom-8
+          h-[2px] w-0 bg-white opacity-50
+          transition-all duration-500
+          w-[100%]
+        "
+      />
+   
+</span>
           </h1>
       
-          <h3 className="font-sans font-semibold text-white
-     text-xl relative">
-Conversion-focused copywriting for 
-businesses that want stronger 
+          <h3 className="font-semibold text-white
+     text-xl relative w-full">
+Conversion-focused copywriting for businesses that want stronger 
 messaging, more and better leads and marketing 
 that actually works.
     </h3>
+</div>
 </div>
 
 
