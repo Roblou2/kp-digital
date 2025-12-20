@@ -40,7 +40,7 @@ export default function Benefits() {
                 Hi! I&apos;m Rob, the owner of Killer Performance Digital. I write copy designed to convert.
               </h2>
 
-                  <h2 className="text-4xl font-semibold leading-tight text-slate-50">
+                  <h2 className="text-xl font-semibold leading-tight text-slate-50">
                Here&apos;s what working with me looks like:
               </h2>
 

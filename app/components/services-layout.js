@@ -392,7 +392,7 @@ that actually works.
 
  <div className="relative bottom-[3rem] border border-white border-[1px] shadow-[0_8px_24px_rgba(255,255,255,0.15),0_0_40px_rgba(255,255,255,0.1)]
 bg-slate-800 bg-[linear-gradient(to_bottom,theme(colors.slate.800)_0%,theme(colors.slate.800)_40%,theme(colors.slate.600)_60%,theme(colors.slate.800)_80%,theme(colors.slate.800)_100%)]
- rounded-3xl w-[80%] max-w-[500px] flex-col flex
+ rounded-3xl w-[100%] max-w-[500px] flex-col flex
  items-center justify-center 
   pt-4 pr-4 pl-4 pb-6 gap-4">
 
