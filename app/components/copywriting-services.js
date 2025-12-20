@@ -65,7 +65,7 @@ export default function Services() {
           absolute right-0 -bottom-2
           h-[2px] w-0 bg-red-600
           transition-all duration-500
-          group-hover:w-[18%]
+          w-[18%]
         "
       />
     </span>
