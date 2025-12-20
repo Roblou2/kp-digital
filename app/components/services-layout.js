@@ -40,7 +40,27 @@ onClick={onToggleMenu}
 <ul className="flex flex-col mt-20
 gap-8 font-barlow text-white text-md">
         <li className="nav-link"><Link href="/">Home</Link></li>
-        <li className="nav-link"><Link href="/services">Services</Link></li>
+    <li className="nav-link">
+  <button
+    type="button"
+    className="flex w-full items-center justify-between"
+    onClick={(e) => {
+      const parent = e.currentTarget.closest("li");
+      parent.querySelector(".services-submenu").classList.toggle("hidden");
+      parent.querySelector(".services-caret").classList.toggle("rotate-180");
+    }}
+  >
+    <span>Services</span>
+    <span className="services-caret transition-transform duration-200">▾</span>
+  </button>
+
+  <ul className="services-submenu mt-4 ml-4 hidden flex-col gap-4 text-sm text-slate-300">
+    <li className="nav-link">
+      <Link href="/services/copywriting-services">Copywriting Services</Link>
+    </li>
+  </ul>
+</li>
+
         <li className="nav-link"><Link href="/about">About</Link></li>
         <li className="nav-link"><Link href="/blog">Blog</Link></li>
         <li className="nav-link"><Link href="/contact">Contact</Link></li>
@@ -50,13 +70,13 @@ gap-8 font-barlow text-white text-md">
 </div>
 
 <header className="sm:hidden xl:block desktops-extra-large
-max-w-[4000px] bg-black relative"> 
+max-w-[4000px] bg-black"> 
 
 <div className="relative h-[1000px]">
       <Image
-     className="object-cover object-center"
+     className="object-cover object-top"
         alt=""
-        src= "/images/my-site-hero-desktops-xl-squares.png"
+        src= "/images/copywriting-hero-desktops-xl-squares.jpg"
         loading="eager"
         quality="100"
 fill={true}
@@ -76,57 +96,114 @@ fill={true}
        
        /> </Link>  
  
-    <ul className="flex flex-row items-center 
-    gap-[2vw] justify-items-end
-    font-barlow text-white text-sm">
-        <li className="nav-link"><Link href="/">Home</Link></li>
-        <li className="nav-link"><Link href="/services">Services</Link></li>
-       
-        <li className="nav-link"><Link href="/about">About</Link></li>
-        <li className="nav-link"><Link href="/blog">Blog</Link></li>
-      
+   <ul
+  className="
+    flex flex-row items-center gap-[2vw]
+    font-barlow text-white text-sm
+  "
+>
+  <li className="nav-link">
+    <Link href="/">Home</Link>
+  </li>
+
+  {/* Services with submenu */}
+  <li className="relative group nav-link">
+    <Link href="/services" className="inline-block">
+      Services
+    </Link>
+
+    {/* Submenu */}
+    <ul
+      className="
+        absolute left-0 top-full
+        mt-3 w-56
+        bg-slate-900 border border-slate-800
+        shadow-xl
+        opacity-0 invisible
+        translate-y-2
+        transition-all duration-200
+        group-hover:opacity-100
+        group-hover:visible
+        group-hover:translate-y-0
+      "
+    >
+    
+
+      <li>
+        <Link
+          href="/services/copywriting-services"
+          className="block px-5 py-3 hover:bg-slate-800 transition"
+        >
+          Copywriting services
+        </Link>
+      </li>
     </ul>
+  </li>
+
+  <li className="nav-link">
+    <Link href="/about">About</Link>
+  </li>
+
+  <li className="nav-link">
+    <Link href="/blog">Blog</Link>
+  </li>
+</ul>
+
 
     </div>
         </nav>
 
-      <div className="absolute text-left top-[16rem]  
-      left-[15%] right-[15%] flex flex-row justify-between items-center">
+    <div className="absolute text-left top-[16rem] left-[15%] right-[15%]
+      flex flex-row justify-between items-start gap-48 font-sans">
 
-<div className="w-1/2">
-      <h2 className="font-barlow text-white
-      text-4xl relative font-bold uppercase">
-      High-converting copywriting for SME<span className="lowercase">s</span>
-          </h2>
-      <h2 className="font-sans font-semibold text-white
-       text-3xl relative uppercase">
-          <span className="neon-red">Better</span> websites </h2>
+ <div className="w-1/2">
+    <div className="relative top-[12rem]">
+       
+    <h1 className="text-white
+ text-6xl relative font-bold pb-8 w-full">
+      Bad copy costs money. 
+          </h1>
+      <h1 className="text-white
+       text-6xl relative font-bold pb-4 w-full">
+<span className="relative inline-block">Great copy   <span className="neon-red">makes</span> money!
+
+  <span
+        className="
+          absolute left-0 -bottom-10
+          h-[2px] w-0 bg-white opacity-50
+          transition-all duration-500
+          w-[120%]
+        "
+      />
+   
+</span>
+          </h1>
       
-          <h2 className="font-sans font-semibold text-white
-       text-3xl relative uppercase">
-    <span className="neon-red">Stronger</span> performance
-    </h2>
-<h2 className="font-sans font-semibold text-white
-       text-3xl relative uppercase">
-<span className="neon-red">More</span> leads
-          </h2>
+          <h3 className="font-semibold text-white
+     text-xl relative w-full">
+Conversion-focused copywriting for 
+businesses that want stronger 
+messaging, more and better leads and marketing 
+that actually works.
+    </h3>
+</div>
+</div>
 
-    
-      <h3 className="font-sans text-white
+ <div className="w-1/2">
 
-      text-2xl relative">
-   Website optimisation, high-converting landing pages, 
-   complete GA4 & GTM tracking and 
-   focused Google Ads campaigns which generate leads.
-          </h3>
+ <div className="relative bottom-[5rem] border border-white border-[1px] shadow-[0_8px_24px_rgba(255,255,255,0.15),0_0_40px_rgba(255,255,255,0.1)]
+bg-slate-800 bg-[linear-gradient(to_bottom,theme(colors.slate.800)_0%,theme(colors.slate.800)_40%,theme(colors.slate.600)_60%,theme(colors.slate.800)_80%,theme(colors.slate.800)_100%)]
+ rounded-3xl w-[80%] max-w-[600px] flex-col flex
+ items-center justify-center 
+  pt-6 pr-6 pl-6 pb-8 gap-6">
 
-          </div>
-
-          <div className="w-1/2 max-w-[600px]">
+<div className="bg-[radial-gradient(ellipse_at_center_top,theme(colors.sky.100)_0%,theme(colors.sky.100)_50%,theme(colors.sky.200)_75%)]
+border border-slate-200 rounded-lg w-full flex flex-col items-center justify-center
+">
+<div className="w-3 h-3 rounded-full bg-sky-100 mt-2 border border-dotted border-slate-600"></div>
             <form
-  className="
-    rounded-2xl border border-slate-800 bg-white
-    p-6
+  className="rounded-2xl border bg-white
+    p-6 w-[90%] my-[5%]
     shadow-lg shadow-black/30
     backdrop-blur">
     
@@ -222,23 +299,29 @@ fill={true}
 
 
 </form>
+</div>
+<div className="w-[20%] h-8 rounded-2xl border-t border-dotted border-slate-200
+bg-gradient-to-b from-slate-600 from-50%
+to-slate-700 to-50% shadow-[inset_0_1px_0_0_theme(colors.slate.500)]">
+
+</div>
+</div>
 
           </div>
 </div>
-
 </header>
 
  <header className="lg:block xl:hidden desktops
-sm:hidden w-[100%] bg-black h-[850px]"> 
+sm:hidden w-[100%] bg-black h-[1000px]"> 
 
-<div className="relative w-full h-[1000px]">
+<div className="relative h-[1000px]">
       <Image
-        className="object-center"
+     className="object-cover object-top"
         alt=""
-        src= "/images/my-site-hero-desktops-xl-squares.png"
+        src= "/images/copywriting-hero-desktops-xl-squares.jpg"
         loading="eager"
- width={1598}
- height={800}
+        quality="100"
+fill={true}
 
       />
      </div>
@@ -246,19 +329,15 @@ sm:hidden w-[100%] bg-black h-[850px]">
        <nav className="top-[2rem] absolute left-[10rem] right-[10rem]">
 
   <div className="flex flex-row items-center justify-between">
-
-         
-           <Link href="/">
-             
-    <Image 
-       src="/images/killer-logo-black-bg-500.png"
-       width={70}
-       height={70}
-       alt="Killer performance digital logo"
  
+       <Link href="/"><Image 
+       src="/images/killer-logo-black-bg-500.png"
+       width={120}
+       height={120}
+       alt="Killer performance digital logo"
+       
        /> </Link>  
-            
-
+ 
     <ul className="flex flex-row items-center 
     gap-[2vw] justify-items-end
     font-barlow text-white text-sm">
@@ -269,49 +348,52 @@ sm:hidden w-[100%] bg-black h-[850px]">
         <li className="nav-link"><Link href="/blog">Blog</Link></li>
       
     </ul>
- 
+
     </div>
         </nav>
 
-        <div className="absolute text-left top-[10rem] left-[10rem] right-[10rem]
-         flex flex-row justify-between items-center">
+      <div className="absolute text-left top-[16rem] left-[10rem] right-[10rem]
+      flex flex-row justify-between items-start">
 
-          <div className="w-1/2">
-        <h2 className="font-barlow text-white
-      text-3xl relative font-bold uppercase">
-      Performance marketing for SME<span className="lowercase">s</span>
-          </h2>
-      <h2 className="font-sans font-semibold text-white
-       text-2xl relative uppercase">
-          <span className="neon-red">Better</span> websites </h2>
+       <div className="w-1/2">
+    <h1 className="font-barlow text-white
+ text-3xl relative font-bold uppercase pb-8">
+      Bad copy costs money. 
+          </h1>
+      <h1 className="font-barlow text-white
+       text-3xl relative font-bold uppercase pb-4">
+Great copy   <span className="neon-red">makes</span> money!
+          </h1>
       
-          <h2 className="font-sans font-semibold text-white
-       text-2xl relative uppercase">
-    <span className="neon-red">Stronger</span> performance
-    </h2>
-<h2 className="font-sans font-semibold text-white
-       text-2xl relative uppercase">
-<span className="neon-red">More</span> leads
-          </h2>
-
-    
-      <h3 className="font-sans text-white
-      text-xl relative">
-   Website optimisation, high-converting landing pages, 
-   complete GA4 & GTM tracking and 
-   focused Google Ads campaigns which generate leads.
-          </h3>
+          <h3 className="font-sans font-semibold text-white
+     text-2xl relative">
+Conversion-focused copywriting for 
+businesses that want stronger 
+messaging, more and better leads and marketing 
+that actually works.
+    </h3>
 </div>
-  <div className="w-1/2 max-w-[500px]">
+
+
+ <div className="w-1/2">
+
+ <div className="relative bottom-[3rem] border border-white border-[1px] shadow-[0_8px_24px_rgba(255,255,255,0.15),0_0_40px_rgba(255,255,255,0.1)]
+bg-slate-800 bg-[linear-gradient(to_bottom,theme(colors.slate.800)_0%,theme(colors.slate.800)_40%,theme(colors.slate.600)_60%,theme(colors.slate.800)_80%,theme(colors.slate.800)_100%)]
+ rounded-3xl w-[80%] max-w-[500px] flex-col flex
+ items-center justify-center 
+  pt-4 pr-4 pl-4 pb-6 gap-4">
+
+<div className="bg-[radial-gradient(ellipse_at_center_top,theme(colors.sky.100)_0%,theme(colors.sky.100)_50%,theme(colors.sky.200)_75%)]
+border border-slate-200 rounded-lg w-full flex flex-col items-center justify-center
+">
+<div className="w-3 h-3 rounded-full bg-sky-100 mt-2 border border-dotted border-slate-600"></div>
             <form
-  className="w-full
-    rounded-2xl border border-slate-800 bg-white
-    p-6
+  className="rounded-2xl border bg-white
+    p-4 my-[5%] w-[90%]
     shadow-lg shadow-black/30
     backdrop-blur">
     
-  <h3 className="mb-5 text-3xl text-black 
-  text-center font-extrabold font-sans uppercase">
+  <h3 className="mb-5 text-3xl text-center font-bold font-sans uppercase text-black">
     Start a conversation
   </h3>
 
@@ -403,10 +485,16 @@ sm:hidden w-[100%] bg-black h-[850px]">
 
 
 </form>
+</div>
+<div className="w-[20%] h-8 rounded-2xl border-t border-dotted border-slate-200
+bg-gradient-to-b from-slate-600 from-50%
+to-slate-700 to-50% shadow-[inset_0_1px_0_0_theme(colors.slate.500)]">
+
+</div>
+</div>
 
           </div>
-
-          </div>
+</div>
 
 </header>
 
@@ -450,38 +538,28 @@ onClick={onToggleMenu}
       </div>
 <div className="top-[8rem] max-w-[649px] absolute  
 right-[3rem] left-[3rem]">
-     <h2 className="font-barlow text-white
-      text-xl relative font-bold uppercase leading-5">
-      Performance marketing for SME<span className="lowercase">s</span>
-          </h2>
-      <h2 className="font-sans font-semibold text-white
-       text-lg relative uppercase w-[100%] leading-3">
-          <span className="neon-red">Better</span> websites </h2>
+  <h1 className="font-barlow text-white
+ text-xl relative font-bold uppercase">
+      Bad copy costs money. 
+          </h1>
+      <h1 className="font-barlow text-white
+       text-xl relative font-bold uppercase">
+Great copy   <span className="neon-red">makes</span> money!
+          </h1>
       
-          <h2 className="font-sans font-semibold text-white
-       text-lg relative uppercase w-[100%] leading-3">
-    <span className="neon-red">Stronger</span> performance
-    </h2>
-<h2 className="font-sans font-semibold text-white
-       text-lg relative uppercase w-[100%] leading-3">
-<span className="neon-red">More</span> leads
-          </h2>
-
-    
-      <h3 className="font-sans text-white
-w-[100%]
-      text-lg relative leading-5">
-   Website optimisation, high-converting landing pages, 
-   complete GA4 & GTM tracking and 
-   focused Google Ads campaigns which generate leads.
-          </h3>
-
+          <h3 className="font-sans font-semibold text-white
+     text-lg relative my-[0px]">
+Conversion-focused copywriting for 
+businesses that want stronger 
+messaging, more and better leads and marketing 
+that actually works.
+    </h3>
           </div>
 
            <form
   className="
     rounded-2xl border border-slate-800 bg-white
-    p-4 mx-[3rem] relative bottom-[6rem]
+    p-4 mx-[3rem] relative mt-[-10rem]
     shadow-md shadow-black/30
     backdrop-blur">
     
@@ -583,7 +661,7 @@ w-[100%]
 <header className="md:block 
 sm:hidden lg:hidden max-w-[1099px] tablets"> 
 
-<div className="relative w-full h-[550px]">
+<div className="relative w-full h-[700px]">
     
       <Image
         alt=""
@@ -617,49 +695,48 @@ onClick={onToggleMenu}
 </div>
 </div>
       
-<div className="absolute text-left top-[8rem] left-[3rem] right-[3rem] 
+<div className="absolute text-left top-[6rem] left-[3rem] right-[3rem] 
 flex flex-row justify-between items-center">
   
-  <div className="w-2/3">
-<h2 className="font-barlow text-white
-      text-2xl relative font-bold uppercase">
-      Performance marketing for SME<span className="lowercase">s</span>
-          </h2>
-      <h2 className="font-sans font-semibold text-white
-       text-xl relative uppercase w-[60%] leading-3">
-          <span className="neon-red">Better</span> websites </h2>
+   <div className="w-1/2">
+    <h1 className="font-barlow text-white
+ text-2xl relative font-bold uppercase pb-8">
+      Bad copy costs money. 
+          </h1>
+      <h1 className="font-barlow text-white
+       text-2xl relative font-bold uppercase pb-4">
+Great copy   <span className="neon-red">makes</span> money!
+          </h1>
       
-          <h2 className="font-sans font-semibold text-white
-       text-xl relative uppercase w-[60%] leading-3">
-    <span className="neon-red">Stronger</span> performance
-    </h2>
-<h2 className="font-sans font-semibold text-white
-       text-xl relative uppercase w-[60%] leading-3">
-<span className="neon-red">More</span> leads
-          </h2>
-
-    
-      <h3 className="font-sans text-white
-w-[70%]
-      text-lg relative leading-4">
-   Website optimisation, high-converting landing pages, 
-   complete GA4 & GTM tracking and 
-   focused Google Ads campaigns which generate leads.
-          </h3>
+          <h3 className="font-sans font-semibold text-white
+     text-xl relative">
+Conversion-focused copywriting for 
+businesses that want stronger 
+messaging, more and better leads and marketing 
+that actually works.
+    </h3>
+</div>
 
 
-          </div>
+ <div className="w-1/2">
 
-          <div className="w-1/2">
+ <div className="relative shadow-[0_8px_24px_rgba(255,255,255,0.15),0_0_40px_rgba(255,255,255,0.1)]
+bg-slate-800 bg-[linear-gradient(to_bottom,theme(colors.slate.800)_0%,theme(colors.slate.800)_40%,theme(colors.slate.600)_60%,theme(colors.slate.800)_80%,theme(colors.slate.800)_100%)]
+ rounded-3xl w-full max-w-[400px] flex-col flex border border-slate-200
+ items-center justify-center 
+  pt-2 pr-2 pl-2 pb-2 gap-2">
+
+<div className="bg-[radial-gradient(ellipse_at_center_top,theme(colors.sky.100)_0%,theme(colors.sky.100)_50%,theme(colors.sky.200)_75%)]
+border border-slate-200 rounded-lg w-full flex flex-col items-center justify-center
+">
+<div className="w-3 h-3 rounded-full bg-sky-100 mt-2 border border-dotted border-slate-600"></div>
             <form
-  className="
-    rounded-2xl border border-slate-800 bg-white
-    p-4
+  className="rounded-2xl border bg-white
+    p-4 my-[5%] w-[90%]
     shadow-lg shadow-black/30
     backdrop-blur">
     
-  <h3 className="mb-5 text-xl 
-  text-right font-extrabold font-sans uppercase text-black">
+  <h3 className="mb-5 text-xl text-center font-bold font-sans uppercase text-black">
     Start a conversation
   </h3>
 
@@ -751,6 +828,13 @@ w-[70%]
 
 
 </form>
+</div>
+<div className="w-[20%] h-8 rounded-2xl border-t border-dotted border-slate-200
+bg-gradient-to-b from-slate-600 from-50%
+to-slate-700 to-50% shadow-[inset_0_1px_0_0_theme(colors.slate.500)]">
+
+</div>
+</div>
 
           </div>
 

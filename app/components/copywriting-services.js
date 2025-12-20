@@ -2,29 +2,29 @@
 
 const services = [
   {
-    title: "Landing Pages & Sales Pages",
+    title: "Landing & Sales Pages",
     description:
-      "Focused, conversion-first pages that turn visitors into enquiries, leads, and customers. Ideal for services, products, offers, and PPC traffic.",
+      "Intent-focused pages that turn visitors into enquiries, leads and customers. Ideal for services, products, offers and PPC traffic.",
   },
   {
     title: "Email Sequences & Campaigns",
     description:
-      "Welcome sequences, nurture flows, and sales campaigns that build trust, warm leads, and drive action over time.",
+      "Welcome sequences, nurture flows and sales campaigns that build trust, warm leads and drive action over time.",
   },
   {
     title: "Direct Response Copy & Funnels",
     description:
-      "Launch copy, offer pages, upsells, scripts, and promotional sequences designed to generate immediate response.",
+      "Launch copy, offer pages, upsells, scripts and promotional sequences designed to generate immediate response.",
   },
   {
     title: "Social Media & Ad Copy (Performance)",
     description:
-      "Scroll-stopping hooks, captions, angles, and scripts for Meta, TikTok, Google, and LinkedIn — all built for performance.",
+      "Scroll-stopping hooks, captions, angles and scripts for Meta, TikTok, Google, and LinkedIn — all built for performance.",
   },
   {
     title: "Brand Messaging & Voice",
     description:
-      "Tone of voice, positioning, value propositions, taglines, and messaging frameworks that clarify how your brand sounds and sells.",
+      "Tone of voice, positioning, value propositions, taglines and messaging frameworks that clarify how your brand sounds and sells.",
   },
 ];
 
@@ -50,21 +50,33 @@ export default function Services() {
           sm:px-[3rem]
         "
       >
-        {/* Header */}
-        <div className="mb-24 max-w-2xl">
-          <p className="mb-4 text-base font-medium uppercase tracking-[0.3em] text-slate-400">
-            Services
-          </p>
+{/* Header */}
+<div className="mb-24 ml-auto max-w-2xl text-right">
+  <p className="mb-4 text-base font-medium uppercase tracking-[0.3em] text-slate-400">
+    Services
+  </p>
 
-          <h2 className="text-4xl font-semibold uppercase leading-tight text-slate-50">
-            What I can write for you
-          </h2>
+  <h2 className="group text-4xl font-semibold uppercase leading-tight text-slate-50">
+    <span className="relative inline-block">
+      What I can write for you
 
-          <p className="mt-6 text-lg text-slate-300">
-            Conversion-focused copy only. No content fluff. No filler. Just
-            writing that directly supports leads, sales, and performance.
-          </p>
-        </div>
+      <span
+        className="
+          absolute right-0 -bottom-2
+          h-[2px] w-0 bg-red-600
+          transition-all duration-500
+          group-hover:w-[18%]
+        "
+      />
+    </span>
+  </h2>
+
+  <p className="mt-6 text-lg text-slate-300">
+    Conversion-focused copy only. No content fluff. No filler. Just writing that
+    directly supports leads, sales and performance.
+  </p>
+</div>
+
 
         {/* Services – purely typographic */}
         <div className="flex flex-col gap-12">
@@ -119,7 +131,7 @@ export default function Services() {
 
         {/* Closing line */}
         <div className="mt-28 max-w-xl">
-          <p className="text-base text-slate-400">
+          <p className="text-lg text-slate-400">
             Not sure which one you need most right now? I’ll review what you
             have and recommend the highest-impact starting point.
           </p>

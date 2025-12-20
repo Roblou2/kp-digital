@@ -5,59 +5,78 @@ import { useState } from "react";
 const caseStudies = [
   {
     id: "01",
-    tag: "Email flows",
-    title: "Welcome email for a growing SME",
-    goal: "Welcome new subscribers and set expectations for a short nurture sequence.",
-    format: "Email – Welcome #1",
-    audience: "New leads for a service-based SME",
-    sampleHeading: "You’re in — here’s what happens next",
-    sampleBody: `Hey [Name],
-
-Quick note to say welcome.
-
-Over the next few days, I’ll send you a handful of short emails that show you:
-• how [result] actually works in practice
-• the common mistakes to avoid
-• the quickest way to get your first win without [big fear]
-
-If you’d like to skip ahead and talk about how this could work for your business, you can book a quick call here: [link].
-
-Speak soon,
-[Client name]`,
+    tag: "Landing page",
+    title: "Landing page for a growing AI music generator",
+    goal: "To get visitors to trial using the software before making a purchase",
+    format: "Landing page hero copy",
+    audience: "Vloggers, content makers, marketing agencies, motion designers, artists, startup founders, students",
+    sampleHeading: "Original, royalty-free music for your digital content ",
+    sampleBody: `
+    With Mubert, you can quickly and easily make music that’s of a specific mood and length. Create unique tracks and ones according to your selections.`,
     rationale:
-      "This opening reduces anxiety, sets a clear expectation for what’s coming next, and invites action without sounding pushy.",
+      "This opening line succinctly describes exactly what the music software does while targeting two of their biggest pain points in one sentence. The sub-text adds extra detail to support the value proposition.",
+  },
+
+    {
+    id: "03",
+    tag: "Trial Welcome & Onboarding – Day 1",
+    title: "Trial kick-off email",
+    goal: "Get fitness trainers to realise need for the app ASAP",
+    format: "Email – 1st welcome flow",
+    audience: "Exercise to music instructors, gym instructors, personal trainers",
+    sampleHeading: "Ready. Set. Go! It’s time to get your pump on.",
+    sampleBody: `Thank you for signing up to try FitnessPlayer! 
+
+You now have 14 days to discover new music, make it your own and try it out in your classes!
+
+We know how much effort it is to spend hours upon hours searching for tracks, and putting together that perfect playlist for your classes and workouts.
+
+But with FitnessPlayer, you can search tracks by BPM, genre, year or track length to easily find the music you want for your classes.
+
+With a fitastic playlist of your own curated and mixed tracks, powered by a super user-friendly interface,  getting your pump on is easier than ever before, and you won’t  be leaving your class participants waiting while you fiddle around with an old clunky music player!
+
+ You’ll find a huge library of ready-made fitness class playlists for different class types, or, you can mix your own tracks, and add intervals, effects or pauses. You can even change the track tempo in real time!
+
+And all of this is simple, quick and easy to do. Once you’re set, you can share your playlist with your friends, sync it to your existing player and control it with Bluetooth.
+
+There’s no time to waste. What are you waiting for?
+
+
+
+`,
+    rationale:
+      "This email confirms the action the trainer has taken and pushes for first product usage by focusing on how the app meets their specific needs when sourcing music for their exercise classes.",
   },
   {
     id: "02",
-    tag: "Landing page",
-    title: "Service landing page hero section",
-    goal: "Make it immediately clear what the service is and who it’s for.",
-    format: "Landing page hero copy",
-    audience: "Owners of small service businesses",
-    sampleHeading: "Clear, conversion-focused copy for small businesses that want more enquiries — not more marketing jargon.",
-    sampleBody: `If you’re already getting some traffic but not enough good-fit enquiries, your copy is probably working against you.
+    tag: "Email",
+    title: "Feature & Benefit Nurture",
+    goal: "Move users from awareness to real usage and purchase readiness",
+    format: "Email flow",
+    audience: "Exercise to music instructors, gym instructors, personal trainers",
+    sampleHeading: "5 reasons to get FitnessPlayer",
+    sampleBody: `At the heart of FitnessPlayer is the simplicity and ease at which you can put together and use a customised playlist in your group-exercise sessions and workouts. 
 
-I help small and medium-sized businesses turn vague, wordy pages into clear, persuasive journeys that feel honest — and actually convert.`,
+If you still haven’t got round to using FitnessPlayer, here are 5 reasons for you to try it out:
+
+Say goodbye to spending hours and hours searching for the perfect tracks for your classes - with FitnessPlayer you can search by BPM, genre, year, or track length.
+
+Or, save even more time by choosing from one of our many ready-made fitness class playlists.
+
+Perhaps you love to make your classes your own, and stand out from the crowd. With our tool, you can easily mix tracks, add and set intervals, add effects or extra breaks.
+ 
+And if improvising in your classes is your thing, you can change track tempo (BPM) in real time!
+
+No more fretting over playing Spotify music illegally in public — FitnessPlayer’s licenses cover the group training industry.
+
+Oh, and did we mention that navigating and using FitnessPlayer has virtually no learning curve? Many other music mixers and players do, but with FitnessPlayer everything is quick and simple.
+
+ Lastly, switching tracks and changing music with the player during your class is almost effortless. 
+
+What are you waiting for? See you in the studio, trainer.
+`,
     rationale:
-      "This hero focuses on the core outcome (more enquiries), calls out the current frustration, and positions the copy as a lever for performance, not decoration.",
-  },
-  {
-    id: "03",
-    tag: "Content → conversion",
-    title: "Turning a blog insight into email copy",
-    goal: "Reuse proven content ideas to warm up subscribers toward a core offer.",
-    format: "Email – nurture / story",
-    audience: "Existing readers subscribed from blog content",
-    sampleHeading: "The moment most people realise their copy is holding them back",
-    sampleBody: `You’ve probably had this happen:
-
-You launch a new page, send a few emails, maybe even run some ads… and you get a trickle of replies, but nowhere near what you expected.
-
-Most of the time, the problem isn’t your offer. It’s how clearly that offer is explained.
-
-In this email, I want to show you one small shift you can make to the way you talk about [offer] so that people immediately understand why it matters — and what to do next.`,
-    rationale:
-      "This email borrows a real scenario from a high-performing blog post and reframes it as a story that leads naturally into the offer.",
+      "This email focuses on trainers who have signed up to the free trial and downloaded the app, but who have perhaps not yet used the trial enough to realise the app's value. By showing not just the features, but the benefits too, the copy highlights the main value proposition and urges fitness traienrs to try the app out and see just how much it can help them.",
   },
 ];
 

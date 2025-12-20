@@ -13,22 +13,18 @@ export default function AboutSection() {
           sm:px-[3rem]
         "
       >
-        <div className="flex flex-col gap-20 lg:flex-row lg:items-start">
+        <div className="flex flex-col flex-col-reverse gap-20 lg:flex-row lg:items-start">
           
           {/* LEFT: Main narrative (BIG, readable) */}
           <div className="lg:w-[60%]">
             <p className="text-xl leading-relaxed text-slate-300">
-              Hi, I’m the copywriter behind Killer Performance Digital. I help
-              small and medium-sized businesses communicate clearly,
-              confidently, and persuasively — without sounding stiff,
-              overproduced, or full of marketing jargon.
+              Hi, I’m the copywriter behind Killer Performance Digital.  My focus is simple: landing pages, emails, direct response and
+              performance-driven brand messaging that directly supports leads,
+              sales and real business growth. 
             </p>
 
             <p className="mt-8 text-xl leading-relaxed text-slate-300">
-              My focus is simple: landing pages, emails, direct response, and
-              performance-driven brand messaging that directly supports leads,
-              sales, and real business growth. No fluff. No filler. Just clean,
-              conversion-focused writing.
+             
             </p>
 
             <div className="mt-16 flex flex-col gap-12 text-xl leading-relaxed text-slate-300">
@@ -43,13 +39,20 @@ export default function AboutSection() {
               />
 
               <AboutPoint
-                title="Honest feedback"
-                text="If something won’t help performance, I’ll say so — even if it’s not what you expected."
+                title="I&apos;ll revise the copy until you're satisfied"
+                text="I like to think that I get it right first time, but
+                if you feel that something I did could be worded differently, I&apos;ll edit
+                the copy until you feel that it acheives what its intended to."
               />
 
               <AboutPoint
-                title="Careful attention to detail"
-                text="Every line is intentional. From headline to microcopy."
+                title="Happy to follow your lead"
+                text="Most clients I work with already know what they need me to write,
+                but if this isn't the case with you, that's totally fine. With over 7 years'
+                worth of experience in copywriting and digital marketing, I've acquired
+                lots of marketing know-how, and can act as your consultant for
+                achieving your marketing goals.
+                In collaboration with you, I can form a marketing strategy, and design a marketing funnel for your business which captures leads and converts."
               />
             </div>
           </div>
@@ -71,8 +74,7 @@ export default function AboutSection() {
                   lg:text-right
                 "
               >
-                A focused copy studio built for clarity, performance,
-                and direct collaboration.
+                A brand-focused copy studio built for lead gen and maximum performance.
               </h2>
 
               <div className="mt-10 h-[2px] w-20 bg-slate-600 lg:ml-auto" />

@@ -5,21 +5,30 @@ import { useEffect, useRef, useState } from "react";
 const testimonials = [
   {
     quote:
-      "Working with Killer Performance Digital was refreshingly easy. Communication was clear, deadlines were hit, and the copy felt like it actually understood our business.",
-    name: "Client Name",
-    role: "Founder, Service Business",
+      "It is great to work with Robert, he has proven to be a reliable partner, and most importantly, the quality of his work is outstanding",
+    role: "Saas eCommerce startup marketing manager",
   },
   {
     quote:
-      "Fast turnaround, great attention to detail, and copy that felt human instead of generic. Exactly what we were looking for.",
-    name: "Client Name",
-    role: "Marketing Manager",
+      "Robert was excellent, it is not often a contractor gets the brief 1st round and adds great value in ideas and presentation.",
+    role: "Marketing agency founder",
   },
   {
     quote:
-      "The messaging finally sounds like us. Everything feels clearer, more confident, and easier to use across our site and emails.",
-    name: "Client Name",
-    role: "Owner, SME",
+      "Thanks a lot for a great copy for B2B company! Will definitely recommend to work with Robert",
+    role: "Startup marketing assistant",
+  },
+
+    {
+    quote:
+      "Excellent, communicative freelancer",
+    role: "Startup founder",
+  },
+
+      {
+    quote:
+      "It was a pleasure working with Rob",
+    role: "Senior Copywriter, media company",
   },
 ];
 
@@ -132,8 +141,7 @@ export default function Testimonials() {
           </h2>
 
           <p className="mt-6 text-lg text-slate-600">
-            Honest feedback from real people I’ve worked with. No hype — just
-            what it’s actually like to collaborate.
+            Honest feedback from real people I’ve worked with. 
           </p>
         </div>
 

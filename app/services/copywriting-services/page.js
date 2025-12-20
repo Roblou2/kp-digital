@@ -55,8 +55,8 @@ perk2="Conversion-focused frameworks"
 perk3="1:1 collaboration with a highly experienced copywriter"
         >
          <Benefits/>
+            <CopywritingServices/>
          <ClientChallenges/>
-         <CopywritingServices/>
 <Testimonials/>
          <CaseStudies/>
          <AboutSection/>

@@ -2,16 +2,16 @@
 
 const benefits = [
   {
-    title: "Conversion before decoration",
-    text: "Nice-sounding copy is useless if it doesn’t move people to act. I focus on structure, message and intent first — then make it sound good.",
+    title: "Copy built for action",
+    text: "Nice-sounding copy is useless if it doesn’t move people to act. I focus on structure, message and intent first; then make it sound good.",
   },
   {
-    title: "Momentum, not months of back-and-forth",
-    text: "You get clear timelines, quick decisions, and copy that ships. No endless rewrites, no disappearing acts, no vague “we’ll circle back”.",
+    title: "On-time delivery, no excuses",
+    text: "You get work sent on time, quick decisions and copy that ships. No endless rewrites, no disappearing acts, no delays.",
   },
   {
-    title: "Straight talk, not agency theatre",
-    text: "You work directly with me. I’ll tell you what will help, what won’t, and why — in plain language you can actually use.",
+    title: "Direct communication, no middlemen",
+    text: "You work directly with me, not an account manager you have to go back and forth with.",
   },
 ];
 
@@ -37,12 +37,16 @@ export default function Benefits() {
               </p>
 
               <h2 className="text-4xl font-semibold leading-tight text-slate-50">
-                If we work together, this is what actually matters
+                Hi! I&apos;m Rob, the owner of Killer Performance Digital. I write copy designed to convert.
+              </h2>
+
+                  <h2 className="text-4xl font-semibold leading-tight text-slate-50">
+               Here&apos;s what working with me looks like:
               </h2>
 
               <p className="mt-6 text-lg text-slate-300">
-                Not a wall of “features”. Just a few principles that shape how I
-                write and how I run projects.
+               I&apos;m not going to show you a wall of “features”. Instead, here are a few principles that shape how I
+                write and what it&apos;s like when you hire me as your go-to copywriter.
               </p>
             </div>
 
@@ -124,7 +128,7 @@ export default function Benefits() {
                   Focused, conversion-led work
                 </p>
                 <p className="mt-1 text-sm text-slate-200/90">
-                  Strategy first. Clear copy second. No filler.
+                  Strategy-led, no filler
                 </p>
               </div>
             </div>

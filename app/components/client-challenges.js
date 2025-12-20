@@ -30,7 +30,12 @@ const challengeGroups = [
     title: "Not sure where to start",
     summary:
       "There are lots of moving parts and you want someone to prioritise what will actually move the needle first.",
+  }, 
+  
+  { title: "No time to write copy",
+summary: "Limited resources have meant that you haven't been able to prioritise your marketing copy."
   },
+
 ];
 
 // Curated, shorter list of “have you said this?” lines
@@ -41,11 +46,12 @@ const leftStatements = [
   "“The website, emails and socials all sound slightly different.”",
   "“The business is good — the copy just feels a bit DIY.”",
   "“I know we need better copy, I’m just not sure where to start.”",
+    "“We've mapped out our customer journey and funnel, but we just don't have the time to write the copy.”",
 ];
 
 export default function ClientChallenges() {
   return (
-  <section className="relative border-t border-slate-800 bg-slate-950 overflow-hidden">
+  <section className="relative border-t z-10 border-slate-800 bg-slate-950 overflow-hidden">
   {/* Background image layer */}
   <div
     className="
@@ -53,9 +59,22 @@ export default function ClientChallenges() {
       absolute inset-0
       bg-[url('/images/client-challenges-bg.jpg')]
       bg-cover bg-center 
-      opacity-20
+      opacity-20 z-[-10]
     "
   />
+
+  <div
+  className="
+    pointer-events-none
+    absolute bottom-0 left-0
+    z-0
+    w-[1220px] h-[1220px]
+    bg-[url('/images/copywriting-services-swirls.png')]
+    bg-no-repeat bg-contain
+   
+
+  "
+/>
 
       <div
         className="
@@ -64,6 +83,8 @@ export default function ClientChallenges() {
           lg:px-[10rem]
           md:px-[3rem]
           sm:px-[3rem]
+          relative
+          z-10
         "
       >
         {/* Section header */}
@@ -72,10 +93,10 @@ export default function ClientChallenges() {
             Client challenges
           </p>
           <h2 className="text-4xl font-semibold leading-tight text-slate-50">
-            The problems I see on repeat
+           The problems I see on repeat
           </h2>
           <p className="mt-6 text-lg text-slate-300">
-            Most SMEs I work with recognise themselves in at least a couple of
+            Most businesses I work with recognise themselves in at least a couple of
             these. You don&apos;t need everything here to be true — one or two
             is enough to know your copy could be working harder.
           </p>
