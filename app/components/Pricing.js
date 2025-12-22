@@ -5,7 +5,7 @@ const pricing = [
     service: "Landing Pages & Sales Pages",
     range: "£1,800 – £4,500",
     description:
-      "Best for paid traffic, lead generation, and services that need to explain their value clearly — fast.",
+      "Best for paid traffic, lead generation and services that need to explain their value clearly — fast.",
     includes: [
       "Conversion-led structure and flow",
       "Headline, hero, and offer clarity",
@@ -17,7 +17,7 @@ const pricing = [
     service: "Email Sequences & Campaigns",
     range: "£1,200 – £3,800+",
     description:
-      "For welcoming, nurturing, or converting subscribers without sounding pushy or generic.",
+      "For welcoming, nurturing or converting subscribers without sounding pushy or generic.",
     includes: [
       "Sequence logic and timing",
       "Subject lines and preview copy",
@@ -28,7 +28,7 @@ const pricing = [
     service: "Direct Response & Funnels",
     range: "£2,000 – £12,000+",
     description:
-      "High-impact copy for launches, funnels, and offers where performance actually matters.",
+      "High-impact copy for launches, funnels and offers where performance is paramount.",
     includes: [
       "Offer framing and positioning",
       "Core pages or funnel steps",
@@ -133,9 +133,9 @@ export default function Pricing() {
         {/* Closing note (centered to avoid left squeeze) */}
         <div className="mt-24 max-w-2xl mx-auto lg:text-center">
           <p className="text-lg leading-relaxed text-slate-400">
-            Not sure which one you need? That’s normal. I’ll look at what you
-            have, tell you what’s worth doing and point you to the
-            highest-impact starting point.
+            Want something more bespoke that&apos;s not on the menu? Just
+            fill out the contact form here so that we can have a discovery call and discuss
+            your project needs.
           </p>
         </div>
       </div>
