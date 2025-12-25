@@ -17,7 +17,7 @@ const benefits = [
 
 export default function Benefits() {
   return (
-    <section className="border-t border-slate-800 bg-slate-950">
+    <section className="border-t border-slate-800 bg-zinc-50">
       <div
         className="
           py-28
@@ -36,15 +36,15 @@ export default function Benefits() {
                 How I work
               </p>
 
-              <h2 className="text-4xl font-semibold leading-tight text-slate-50">
+              <h2 className="text-4xl font-semibold leading-tight text-slate-900">
                 Hi! I&apos;m Rob, the owner of Killer Performance Digital. I write copy designed to convert.
               </h2>
 
-                  <h2 className="text-xl font-semibold leading-tight text-slate-50">
+                  <h2 className="text-xl font-semibold leading-tight text-slate-700">
                Here&apos;s what working with me looks like:
               </h2>
 
-              <p className="mt-6 text-lg text-slate-300">
+              <p className="mt-6 text-lg text-slate-600">
                I&apos;m not going to show you a wall of “features”. Instead, here are a few principles that shape how I
                 write and what it&apos;s like when you hire me as your go-to copywriter.
               </p>
@@ -56,7 +56,7 @@ export default function Benefits() {
                 <div
                   key={item.title}
                   className="
-                    group relative border-l border-slate-700 pl-6
+                    group relative border-l border-slate-200 pl-6
                     transition-transform duration-300
                     hover:translate-x-1
                   "
@@ -71,11 +71,11 @@ export default function Benefits() {
                     "
                   />
 
-                  <h3 className="text-2xl font-semibold text-slate-50">
+                  <h3 className="text-2xl font-semibold text-slate-900">
                     {item.title}
                   </h3>
 
-                  <p className="mt-3 text-lg leading-relaxed text-slate-300">
+                  <p className="mt-3 text-lg leading-relaxed text-slate-600">
                     {item.text}
                   </p>
                 </div>
@@ -96,7 +96,7 @@ export default function Benefits() {
                 lg:h-[80%]
                 lg:w-[100%]
               h-full w-full
-                bg-slate-100/90
+                bg-slate-200/90
                
               "
             />

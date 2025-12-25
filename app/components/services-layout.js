@@ -587,7 +587,7 @@ that actually works.
     rounded-2xl border border-slate-800 bg-white
     p-4 mx-[3rem] relative mt-[-2rem]
     shadow-md shadow-black/30
-    backdrop-blur">
+    backdrop-blur mb-20">
     
   <h3 className="mb-5 text-xl text-center font-extrabold font-sans uppercase text-black">
     Start a conversation
@@ -687,7 +687,7 @@ that actually works.
 <header className="md:block 
 sm:hidden lg:hidden max-w-[1099px] tablets"> 
 
-<div className="relative w-full h-[700px]">
+<div className="relative w-full h-[800px]">
     
       <Image
         alt=""
