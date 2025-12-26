@@ -83,10 +83,6 @@ export default function Pricing() {
         <div className="flex flex-col gap-32">
           {pricing.map((item, index) => (
             <div key={item.service} className="relative">
-              {/* Giant background index */}
-              <div className="pointer-events-none absolute -top-16 -left-6 text-[160px] font-bold leading-none text-white/[0.03]">
-                {String(index + 1).padStart(2, "0")}
-              </div>
 
               {/* Row content uses width on desktop */}
               <div className="relative z-10">

@@ -25,12 +25,24 @@ export default function Contact() {
             </p>
 
             <h2 className="text-4xl md:text-5xl font-semibold leading-tight text-slate-900">
+                 <span className="relative inline-block">
               Start a conversation
+                  <span
+        className="
+          absolute left-0 left-0 
+          h-[2px] -bottom-4 bg-red-600
+          w-[18%]
+        "
+      />
+      </span>
             </h2>
-
+  
             <p className="mt-6 text-lg leading-relaxed text-slate-600">
-              Tell me a bit about what you’re working on. I’ll reply with a clear,
-              honest next step — no pressure, no pushy sales.
+         We typically respond to enquiries within 48 hours.
+            </p>
+                <p className="mt-6 text-2xl leading-relaxed
+                font-bold text-slate-900">
+         info@killerperformancedigital.com
             </p>
           </div>
 
@@ -126,9 +138,6 @@ export default function Contact() {
                 Send message
               </button>
 
-              <p className="mt-3 text-xs text-slate-500 text-center">
-                I usually respond within 24–48 hours.
-              </p>
             </form>
           </div>
 

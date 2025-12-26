@@ -2,7 +2,6 @@ import Services from './components/services.js'
 import ServicesHome from "./components/services-home.js"
 import ContactUs from "./components/contact-home.js"
 import Layout from './components/layout.js'
-import Contact from './components/contact.js'
 import Head from 'next/head';
 
 export const metadata = {
