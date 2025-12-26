@@ -7,6 +7,7 @@ import Testimonials from "@/app/components/testimonials"
 import CaseStudies from "@/app/components/case-studies"
 import ClientChallenges from "@/app/components/client-challenges"
 import Pricing from "@/app/components/Pricing"
+import Contact from "@/app/components/Contact"
 
 
 export const metadata = {
@@ -61,6 +62,7 @@ perk3="1:1 collaboration with a highly experienced copywriter"
 <Testimonials/>
 <Pricing/>
          <CaseStudies/>
+         <Contact/>
          <AboutSection/>
         </ServicesLayout>
         </>
