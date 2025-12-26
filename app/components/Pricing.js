@@ -133,6 +133,18 @@ export default function Pricing() {
             fill out the contact form here so that we can have a discovery call and discuss
             your project needs.
           </p>
+                   <button
+                type="submit"
+                className="
+                 w-1/2 inline-flex items-center justify-center
+                  rounded-md bg-red-600 px-4 py-2.5
+                  text-lg font-semibold text-white
+                  shadow-sm transition-colors
+                  hover:bg-red-500
+                "
+              >
+                Send message
+              </button>
         </div>
       </div>
     </section>

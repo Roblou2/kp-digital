@@ -135,6 +135,18 @@ export default function Services() {
             Not sure which one you need most right now? I’ll review what you
             have and recommend the highest-impact starting point.
           </p>
+            <button
+                type="submit"
+                className="
+                 w-1/2 inline-flex items-center justify-center
+                  rounded-md bg-red-600 px-4 py-2.5
+                  text-lg font-semibold text-white
+                  shadow-sm transition-colors
+                  hover:bg-red-500
+                "
+              >
+                Send message
+              </button>
         </div>
       </div>
     </section>
