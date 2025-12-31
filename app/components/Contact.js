@@ -71,7 +71,7 @@ export default function Contact() {
                   required
                   className="
                     mt-2 block w-full rounded-md border border-slate-200 bg-slate-300
-                    px-3 py-2 text-md md:text-lg text-slate-50 placeholder:text-slate-900
+                    px-3 py-2 text-md md:text-lg text-slate-900 placeholder:text-slate-900
                     focus:border-red-500 focus:outline-none focus:ring-1 focus:ring-red-500
                   "
                   placeholder="Your name"
@@ -88,7 +88,7 @@ export default function Contact() {
                   required
                   className="
                     mt-2 block w-full rounded-md border border-slate-700 bg-slate-300
-                    px-3 py-2 text-md md:text-lg text-slate-50 placeholder:text-slate-900
+                    px-3 py-2 text-md md:text-lg text-slate-900 placeholder:text-slate-900
      focus:border-red-500 focus:outline-none focus:ring-1 focus:ring-red-500
                   "
                   placeholder="you@company.com"
@@ -104,7 +104,7 @@ export default function Contact() {
                   type="tel"
                   className="
                     mt-2 block w-full rounded-md border border-slate-700 bg-slate-300
-                    px-3 py-2 text-md md:text-lg text-slate-50 placeholder:text-slate-900
+                    px-3 py-2 text-md md:text-lg text-slate-900 placeholder:text-slate-900
                     px-3 py-2 
                     placeholder:text-slate-500
                         focus:border-red-500 focus:outline-none focus:ring-1 focus:ring-red-500
@@ -122,7 +122,7 @@ export default function Contact() {
                   rows={4}
                   className="
                     mt-2 block w-full rounded-md border border border-slate-700 bg-slate-300
-                    px-3 py-2 text-md md:text-lg text-slate-50 placeholder:text-slate-900
+                    px-3 py-2 text-md md:text-lg text-slate-900 placeholder:text-slate-900
                     placeholder:text-slate-500
                     focus:border-red-500 focus:outline-none focus:ring-1 focus:ring-red-500
                   "
