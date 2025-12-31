@@ -552,7 +552,7 @@ to-slate-700 to-50% shadow-[inset_0_1px_0_0_theme(colors.slate.500)]">
       <Image
      className=""
         alt=""
-        src= "/images/killer-performance-digital-hero-sm.png"
+        src= "/images/copywriting-services-hero-sm.jpg"
         loading="eager"
         quality="100"
 
@@ -724,7 +724,7 @@ sm:hidden lg:hidden max-w-[1099px] tablets">
     
       <Image
         alt=""
-        src= "/images/killer-performance-digital-hero-md.png"
+        src= "/images/copywriting-services-hero-md.jpg"
         loading="eager"
         quality="100"
       fill={true}
