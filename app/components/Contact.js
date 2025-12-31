@@ -56,22 +56,22 @@ export default function Contact() {
           <div className="md:w-[60%]">
             <form
               className="
-                rounded-2xl border border-slate-200 bg-white
+                rounded-2xl border border-slate-200 bg-slate-900
                 p-6 md:p-8
                 shadow-[0_12px_40px_-10px_rgba(0,0,0,0.12)]
               "
             >
               {/* Name */}
               <div className="mb-5">
-                <label className="block text-sm font-medium text-slate-900">
+                <label className="block text-md md:text-lg font-medium text-white">
                   Name <span className="text-red-600">*</span>
                 </label>
                 <input
                   type="text"
                   required
                   className="
-                    mt-2 block w-full rounded-md border border-slate-700 bg-slate-900
-                    px-3 py-2 text-sm text-slate-50 placeholder:text-slate-500
+                    mt-2 block w-full rounded-md border border-slate-200 bg-slate-300
+                    px-3 py-2 text-md md:text-lg text-slate-50 placeholder:text-slate-900
                     focus:border-red-500 focus:outline-none focus:ring-1 focus:ring-red-500
                   "
                   placeholder="Your name"
@@ -80,15 +80,15 @@ export default function Contact() {
 
               {/* Email */}
               <div className="mb-5">
-                <label className="block text-sm font-medium text-slate-900">
+                <label className="block text-md md:text-lg font-medium text-slate-200">
                   Email <span className="text-red-600">*</span>
                 </label>
                 <input
                   type="email"
                   required
                   className="
-                    mt-2 block w-full rounded-md border border-slate-700 bg-slate-900
-                    px-3 py-2 text-sm text-slate-50 placeholder:text-slate-500
+                    mt-2 block w-full rounded-md border border-slate-700 bg-slate-300
+                    px-3 py-2 text-md md:text-lg text-slate-50 placeholder:text-slate-900
      focus:border-red-500 focus:outline-none focus:ring-1 focus:ring-red-500
                   "
                   placeholder="you@company.com"
@@ -97,15 +97,15 @@ export default function Contact() {
 
               {/* Phone */}
               <div className="mb-5">
-                <label className="block text-sm font-medium text-slate-900">
+                <label className="block text-md md:text-lg font-medium text-slate-200">
                   Phone (optional)
                 </label>
                 <input
                   type="tel"
                   className="
-                    mt-2 block w-full rounded-md border border-slate-700 bg-slate-900
-                    px-3 py-2 text-sm text-slate-50 placeholder:text-slate-500
-                    px-3 py-2 text-sm 
+                    mt-2 block w-full rounded-md border border-slate-700 bg-slate-300
+                    px-3 py-2 text-md md:text-lg text-slate-50 placeholder:text-slate-900
+                    px-3 py-2 
                     placeholder:text-slate-500
                         focus:border-red-500 focus:outline-none focus:ring-1 focus:ring-red-500
                   "
@@ -115,14 +115,14 @@ export default function Contact() {
 
               {/* Message */}
               <div className="mb-6">
-                <label className="block text-sm font-medium text-slate-900">
+                <label className="block text-md md:text-lg font-medium text-slate-200">
                   What do you need help with?
                 </label>
                 <textarea
                   rows={4}
                   className="
-                    mt-2 block w-full rounded-md border border border-slate-700 bg-slate-900
-                    px-3 py-2 text-sm text-slate-50 placeholder:text-slate-500
+                    mt-2 block w-full rounded-md border border border-slate-700 bg-slate-300
+                    px-3 py-2 text-md md:text-lg text-slate-50 placeholder:text-slate-900
                     placeholder:text-slate-500
                     focus:border-red-500 focus:outline-none focus:ring-1 focus:ring-red-500
                   "
@@ -136,7 +136,7 @@ export default function Contact() {
                 className="
                   inline-flex w-full items-center justify-center
                   rounded-md bg-red-600 px-4 py-2.5
-                  text-sm font-semibold text-white
+                  text-md md:text-lg font-semibold text-white
                   shadow-sm transition-colors
                   hover:bg-slate-800
                 "
