@@ -342,7 +342,40 @@ fill={true}
     gap-[2vw] justify-items-end
     font-barlow text-white text-sm">
         <li className="nav-link"><Link href="/">Home</Link></li>
-        <li className="nav-link"><Link href="/services">Services</Link></li>
+       {/* Services with submenu */}
+  <li className="relative group nav-link">
+    <Link href="/services" className="inline-block">
+      Services
+    </Link>
+
+    {/* Submenu */}
+    <ul
+      className="
+        absolute left-0 top-full
+        mt-3 w-56
+        bg-slate-900 border border-slate-800
+        shadow-xl
+        opacity-0 invisible
+        translate-y-2
+        transition-all duration-200
+        group-hover:opacity-100
+        group-hover:visible
+        group-hover:translate-y-0
+      "
+    >
+    
+
+      <li>
+        <Link
+          href="/services/copywriting-services"
+          className="block px-5 py-3 hover:bg-slate-800 transition"
+        >
+          Copywriting services
+        </Link>
+      </li>
+    </ul>
+  </li>
+
        
         <li className="nav-link"><Link href="/about">About</Link></li>
         <li className="nav-link"><Link href="/blog">Blog</Link></li>

@@ -40,7 +40,26 @@ onClick={onToggleMenu}
 <ul className="flex flex-col mt-20
 gap-8 font-barlow text-white text-md">
         <li className="nav-link"><Link href="/">Home</Link></li>
-        <li className="nav-link"><Link href="/services">Services</Link></li>
+        <li className="nav-link">
+              <button
+    type="button"
+    className="flex w-full items-center justify-between"
+    onClick={(e) => {
+      const parent = e.currentTarget.closest("li");
+      parent.querySelector(".services-submenu").classList.toggle("hidden");
+      parent.querySelector(".services-caret").classList.toggle("rotate-180");
+    }}
+  >
+    <span>Services</span>
+    <span className="services-caret transition-transform duration-200">▾</span>
+  </button>
+
+  <ul className="services-submenu mt-4 ml-4 hidden flex-col gap-4 text-sm text-slate-300">
+    <li className="nav-link">
+      <Link href="/services/copywriting-services">Copywriting Services</Link>
+    </li>
+  </ul>
+</li>
         <li className="nav-link"><Link href="/about">About</Link></li>
         <li className="nav-link"><Link href="/blog">Blog</Link></li>
         <li className="nav-link"><Link href="/contact">Contact</Link></li>
@@ -67,7 +86,39 @@ w-[100%] bg-black">
     gap-[2vw] justify-items-end
     font-barlow text-white text-sm">
         <li className="nav-link"><Link href="/">Home</Link></li>
-        <li className="nav-link"><Link href="/services">Services</Link></li>
+  {/* Services with submenu */}
+  <li className="relative group nav-link">
+    <Link href="/services" className="inline-block">
+      Services
+    </Link>
+
+    {/* Submenu */}
+    <ul
+      className="
+        absolute left-0 top-full
+        mt-3 w-56
+        bg-slate-900 border border-slate-800
+        shadow-xl
+        opacity-0 invisible
+        translate-y-2
+        transition-all duration-200
+        group-hover:opacity-100
+        group-hover:visible
+        group-hover:translate-y-0
+      "
+    >
+    
+
+      <li>
+        <Link
+          href="/services/copywriting-services"
+          className="block px-5 py-3 hover:bg-slate-800 transition"
+        >
+          Copywriting services
+        </Link>
+      </li>
+    </ul>
+  </li>
        
         <li className="nav-link"><Link href="/about">About</Link></li>
         <li className="nav-link"><Link href="/blog">Blog</Link></li>
@@ -106,7 +157,39 @@ sm:hidden w-[100%] bg-black">
     gap-[2vw] justify-items-end
     font-barlow text-white text-sm">
         <li className="nav-link"><Link href="/">Home</Link></li>
-        <li className="nav-link"><Link href="/services">Services</Link></li>
+    {/* Services with submenu */}
+  <li className="relative group nav-link">
+    <Link href="/services" className="inline-block">
+      Services
+    </Link>
+
+    {/* Submenu */}
+    <ul
+      className="
+        absolute left-0 top-full
+        mt-3 w-56
+        bg-slate-900 border border-slate-800
+        shadow-xl
+        opacity-0 invisible
+        translate-y-2
+        transition-all duration-200
+        group-hover:opacity-100
+        group-hover:visible
+        group-hover:translate-y-0
+      "
+    >
+    
+
+      <li>
+        <Link
+          href="/services/copywriting-services"
+          className="block px-5 py-3 hover:bg-slate-800 transition"
+        >
+          Copywriting services
+        </Link>
+      </li>
+    </ul>
+  </li>
        
         <li className="nav-link"><Link href="/about">About</Link></li>
         <li className="nav-link"><Link href="/blog">Blog</Link></li>

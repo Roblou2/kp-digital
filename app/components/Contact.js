@@ -1,10 +1,10 @@
-// components/Contact.js
+import Image from 'next/image'
 
 export default function Contact() {
   return (
     <section
       id="contact"
-      className="border-t border-slate-200 bg-white"
+      className="border-t border-slate-200 bg-zinc-50"
     >
       <div
         className="
@@ -44,8 +44,14 @@ export default function Contact() {
                 font-bold text-slate-900">
          info@killerperformancedigital.com
             </p>
+            <div className="flex flex-row justify-center">
+             <Image src="/images/arm-flexed.png"
+            alt=""
+            width={200}
+            height={200}
+                />
           </div>
-
+</div>
           {/* RIGHT — FORM */}
           <div className="md:w-[60%]">
             <form
