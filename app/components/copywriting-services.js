@@ -138,7 +138,7 @@ export default function Services() {
             <button
                 type="submit"
                 className="
-                 w-1/2 inline-flex items-center justify-center
+                 w-full md:w-1/2 inline-flex items-center justify-center
                   rounded-md bg-red-600 px-4 py-2.5
                   text-lg font-semibold text-white
                   shadow-sm transition-colors
