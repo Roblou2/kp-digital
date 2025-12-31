@@ -19,7 +19,7 @@ export default function Contact() {
         <div className="flex flex-col gap-16 md:gap-24 md:flex-row md:items-start">
           
           {/* LEFT — TITLE / INTRO */}
-          <div className="md:w-[40%]">
+          <div className="md:w-[40%] w-[100%]">
             <p className="mb-4 text-sm font-medium uppercase tracking-[0.35em] text-slate-500">
               Contact
             </p>
@@ -40,7 +40,7 @@ export default function Contact() {
             <p className="mt-6 text-lg leading-relaxed text-slate-600">
          We typically respond to enquiries within 48 hours.
             </p>
-                <p className="mt-6 text-2xl leading-relaxed
+                <p className="mt-6 text-lg md:text-xl lg:text-2xl leading-relaxed
                 font-bold text-slate-900">
          info@killerperformancedigital.com
             </p>
