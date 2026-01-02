@@ -1,6 +1,42 @@
+"use client";
 import Image from 'next/image'
+import { useState } from "react";
 
 export default function Contact() {
+
+  const [status, setStatus] = useState("idle"); // idle | loading | success | error
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+    setStatus("loading");
+
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+
+    const payload = {
+      name: formData.get("name"),
+      email: formData.get("email"),
+      phone: formData.get("phone"),
+      details: formData.get("details"),
+    };
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+
+      if (!res.ok) throw new Error("Request failed");
+
+      setStatus("success");
+      form.reset();
+    } catch (err) {
+      console.error(err);
+      setStatus("error");
+    }
+  }
+
   return (
     <section
       id="contact"
@@ -55,6 +91,7 @@ export default function Contact() {
           {/* RIGHT — FORM */}
           <div className="md:w-[60%]">
             <form
+            onSubmit={handleSubmit}
               className="
                 rounded-2xl border border-slate-200 bg-slate-900
                 p-6 md:p-8
@@ -68,6 +105,7 @@ export default function Contact() {
                 </label>
                 <input
                   type="text"
+                    name="name"
                   required
                   className="
                     mt-2 block w-full rounded-md border border-slate-200 bg-slate-300
@@ -85,6 +123,7 @@ export default function Contact() {
                 </label>
                 <input
                   type="email"
+                   name="email"   
                   required
                   className="
                     mt-2 block w-full rounded-md border border-slate-700 bg-slate-300
@@ -102,6 +141,7 @@ export default function Contact() {
                 </label>
                 <input
                   type="tel"
+                  name="phone"  
                   className="
                     mt-2 block w-full rounded-md border border-slate-700 bg-slate-300
                     px-3 py-2 text-md md:text-lg text-slate-900 placeholder:text-slate-900
@@ -120,6 +160,7 @@ export default function Contact() {
                 </label>
                 <textarea
                   rows={4}
+                     name="details"  
                   className="
                     mt-2 block w-full rounded-md border border border-slate-700 bg-slate-300
                     px-3 py-2 text-md md:text-lg text-slate-900 placeholder:text-slate-900
@@ -132,7 +173,8 @@ export default function Contact() {
 
               {/* Submit */}
               <button
-                type="submit"
+                   type="submit"
+                disabled={status === "loading"}
                 className="
                   inline-flex w-full items-center justify-center
                   rounded-md bg-red-600 px-4 py-2.5
@@ -141,8 +183,21 @@ export default function Contact() {
                   hover:bg-slate-800
                 "
               >
-                Send message
+            
+                {status === "loading" ? "Sending…" : "Send message"}
               </button>
+
+                  {status === "success" && (
+                <p className="mt-3 text-xs text-emerald-600 text-center">
+                  Thanks — I&apos;ll get back to you as soon as I can.
+                </p>
+              )}
+
+                    {status === "error" && (
+                <p className="mt-3 text-xs text-red-600 text-center">
+                  Something went wrong. Please try again.
+                </p>
+              )}
 
             </form>
           </div>
