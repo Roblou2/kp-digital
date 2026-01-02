@@ -255,7 +255,7 @@ fill={true}
           <Image
          className=""
             alt=""
-            src= "/images/my-site-hero-mobiles-narrow-dark.png"
+            src= "/images/copywriting-services-hero-sm.jpg"
             loading="eager"
             quality="100"
     width={700}
