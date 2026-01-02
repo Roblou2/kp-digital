@@ -78,7 +78,7 @@ export default function Contact() {
             </p>
                 <p className="mt-6 text-lg md:text-xl lg:text-2xl leading-relaxed
                 font-bold text-slate-900">
-         info@killerperformancedigital.com
+      hello@killerperformancedigital.com
             </p>
             <div className="flex flex-row justify-center">
              <Image src="/images/arm-flexed.png"

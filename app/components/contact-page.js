@@ -26,7 +26,7 @@ flex flex-col px-[3rem] lg:px-[0rem] lg:ml-[10rem] pt-12 xl:ml-[15%]">
  
 <div className="flex flex-row  
 contact font-barlow py-2"> <p className='text-xl 
-md:text-2xl lg:text-4xl text-white'>info@sleekdigitaldesigns.com</p>
+md:text-2xl lg:text-4xl text-white'>hello@sleekdigitaldesigns.com</p>
 </div>
 
 </div>
