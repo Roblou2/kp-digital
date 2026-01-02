@@ -56,7 +56,7 @@ export default function Pricing() {
             Pricing
           </p>
 
-          <h2 className="text-5xl font-semibold leading-tight text-slate-50">
+          <h2 className="text-4xl lg:text-5xl font-semibold leading-tight text-slate-50">
             <span className="relative inline-block">
       Straightfoward pricing
       <br/>
