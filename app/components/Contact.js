@@ -188,8 +188,8 @@ export default function Contact() {
               </button>
 
                   {status === "success" && (
-                <p className="mt-3 text-xs text-emerald-600 text-center">
-                  Thanks — I&apos;ll get back to you as soon as I can.
+                <p className="mt-3 text-lg text-emerald-600 text-center">
+                  Thank you for your message! I&apos;ll get back to you as soon as I can.
                 </p>
               )}
 
