@@ -271,8 +271,8 @@ border border-slate-200 rounded-lg w-full flex flex-col items-center justify-cen
       type="email"
       name="email"
       required
-      className="
-        mt-2 block w-full rounded-lg border border-slate-700 bg-slate-900
+      className="field
+        mt-2 block w-full rounded-lg bg-slate-900
         px-3 py-2 text-sm text-slate-50
         placeholder:text-slate-500
         focus:border-red-500 focus:outline-none focus:ring-1 focus:ring-red-500
@@ -923,8 +923,8 @@ border border-slate-200 rounded-lg w-full flex flex-col items-center justify-cen
     <input
       type="tel"
       name="phone"
-      className="
-        mt-2 block w-full rounded-lg border border-slate-700 bg-slate-900
+      className="field
+        mt-2 block w-full rounded-lg bg-slate-900
         px-3 py-2 text-sm text-slate-50
         placeholder:text-slate-500
         focus:border-red-500 focus:outline-none focus:ring-1 focus:ring-red-500
@@ -941,8 +941,8 @@ border border-slate-200 rounded-lg w-full flex flex-col items-center justify-cen
     <textarea
       name="details"
       rows={3}
-      className="
-        mt-2 block w-full rounded-lg border border-slate-700 bg-slate-900
+      className="field
+        mt-2 block w-full rounded-lg bg-slate-900
         px-3 py-2 text-sm text-slate-50
         placeholder:text-slate-500
         focus:border-red-500 focus:outline-none focus:ring-1 focus:ring-red-500"/>

@@ -5,6 +5,14 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+  .field {
+    @apply block w-full rounded-md
+      border border-[#7E47FF] bg-slate-300
+      px-3 py-2 text-lg text-slate-900 placeholder:text-slate-900
+      focus:border-white focus:ring-1 focus:ring-white focus:outline-none;
+  }
+}
 
 body {
     font-family: "Helvetica";  
