@@ -1,12 +1,43 @@
 "use client";
 import Image from "next/image";
-
+import { useState } from "react";
 import Link from "next/link";
 
 
 const LandingLayout = ({children, ...props}) => {
 
+const [status, setStatus] = useState("idle"); // idle | loading | success | error
 
+  async function handleSubmit(e) {
+    e.preventDefault();
+    setStatus("loading");
+
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+
+    const payload = {
+      name: formData.get("name"),
+      email: formData.get("email"),
+      phone: formData.get("phone"),
+      details: formData.get("details"),
+    };
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+
+      if (!res.ok) throw new Error("Request failed");
+
+      setStatus("success");
+      form.reset();
+    } catch (err) {
+      console.error(err);
+      setStatus("error");
+    }
+  }
 
     return (
      
@@ -105,6 +136,7 @@ border border-slate-200 rounded-lg w-full flex flex-col items-center justify-cen
 ">
 <div className="w-3 h-3 rounded-full bg-sky-100 mt-2 border border-dotted border-slate-600"></div>
             <form
+            onSubmit={handleSubmit}
   className="rounded-2xl border bg-white
     p-6 w-[90%] my-[5%]
     shadow-lg shadow-black/30
@@ -188,6 +220,7 @@ border border-slate-200 rounded-lg w-full flex flex-col items-center justify-cen
   {/* Submit */}
   <button
     type="submit"
+    disabled={status === "loading"}
     className="
       inline-flex w-full items-center justify-center
       rounded-lg bg-red-600 px-4 py-2.5
@@ -197,9 +230,18 @@ border border-slate-200 rounded-lg w-full flex flex-col items-center justify-cen
       hover:bg-red-500
     "
   >
-    Get in touch
+  {status === "loading" ? "Sending…" : "Get in touch"}
   </button>
-
+  {status === "success" && (
+                <p className="mb-0 mt-2 text-xs text-emerald-600 text-center">
+                  Thank you for your message! I&apos;ll get back to you ASAP!
+                </p>
+              )}
+              {status === "error" && (
+                <p className="mt-2 mb-0 text-xs text-red-600 text-center">
+                  Something went wrong. Please try again.
+                </p>
+              )}
 
 </form>
 </div>
@@ -294,6 +336,7 @@ border border-slate-200 rounded-lg w-full flex flex-col items-center justify-cen
 ">
 <div className="w-3 h-3 rounded-full bg-sky-100 mt-2 border border-dotted border-slate-600"></div>
             <form
+            onSubmit={handleSubmit}
   className="rounded-2xl border bg-white
     p-4 my-[5%] w-[90%]
     shadow-lg shadow-black/30
@@ -377,6 +420,7 @@ border border-slate-200 rounded-lg w-full flex flex-col items-center justify-cen
   {/* Submit */}
   <button
     type="submit"
+     disabled={status === "loading"}
     className="
       inline-flex w-full items-center justify-center
       rounded-lg bg-red-600 px-4 py-2.5
@@ -386,9 +430,18 @@ border border-slate-200 rounded-lg w-full flex flex-col items-center justify-cen
       hover:bg-red-500
     "
   >
-    Get in touch
+ {status === "loading" ? "Sending…" : "Get in touch"}
   </button>
-
+{status === "success" && (
+                <p className="mb-0 mt-2 text-xs text-emerald-600 text-center">
+                  Thank you for your message! I&apos;ll get back to you ASAP!
+                </p>
+              )}
+              {status === "error" && (
+                <p className="mt-2 mb-0 text-xs text-red-600 text-center">
+                  Something went wrong. Please try again.
+                </p>
+              )}
 
 </form>
 </div>
@@ -471,6 +524,7 @@ that actually works.
           </div>
 
            <form
+              onSubmit={handleSubmit}
   className="
     rounded-2xl border border-slate-800 bg-white
     p-4 mx-[3rem] relative mt-[-2rem]
@@ -555,6 +609,7 @@ that actually works.
   {/* Submit */}
   <button
     type="submit"
+        disabled={status === "loading"}
     className="
       inline-flex w-full items-center justify-center
       rounded-lg bg-red-600 px-4 py-2.5
@@ -564,9 +619,18 @@ that actually works.
       hover:bg-red-500
     "
   >
-    Get in touch
+ {status === "loading" ? "Sending…" : "Get in touch"}
   </button>
-
+{status === "success" && (
+                <p className="mb-0 mt-2 text-xs text-emerald-600 text-center">
+                  Thank you for your message! I&apos;ll get back to you ASAP!
+                </p>
+              )}
+              {status === "error" && (
+                <p className="mt-2 mb-0 text-xs text-red-600 text-center">
+                  Something went wrong. Please try again.
+                </p>
+              )}
 
 </form>
 </header>
@@ -654,6 +718,7 @@ border border-slate-200 rounded-lg w-full flex flex-col items-center justify-cen
 ">
 <div className="w-3 h-3 rounded-full bg-sky-100 mt-2 border border-dotted border-slate-600"></div>
             <form
+              onSubmit={handleSubmit}
   className="rounded-2xl border bg-white
     p-4 my-[5%] w-[90%]
     shadow-lg shadow-black/30
@@ -737,6 +802,7 @@ border border-slate-200 rounded-lg w-full flex flex-col items-center justify-cen
   {/* Submit */}
   <button
     type="submit"
+    disabled={status === "loading"}
     className="
       inline-flex w-full items-center justify-center
       rounded-lg bg-red-600 px-4 py-2.5
@@ -746,9 +812,18 @@ border border-slate-200 rounded-lg w-full flex flex-col items-center justify-cen
       hover:bg-red-500
     "
   >
-    Get in touch
+ {status === "loading" ? "Sending…" : "Get in touch"}
   </button>
-
+{status === "success" && (
+                <p className="mb-0 mt-2 text-xs text-emerald-600 text-center">
+                  Thank you for your message! I&apos;ll get back to you ASAP!
+                </p>
+              )}
+              {status === "error" && (
+                <p className="mt-2 mb-0 text-xs text-red-600 text-center">
+                  Something went wrong. Please try again.
+                </p>
+              )}
 
 </form>
 </div>
