@@ -1,5 +1,7 @@
 // components/Services.js
 
+import Link from "next/link";
+
 const services = [
   {
     title: "Landing & Sales Pages",
@@ -131,10 +133,10 @@ export default function Services() {
 
         {/* Closing line */}
         <div className="mt-28 max-w-xl">
-          <p className="text-lg text-slate-400">
-            Not sure which one you need most right now? I’ll review what you
-            have and recommend the highest-impact starting point.
+          <p className="text-xl text-slate-200">
+            Want more info? Drop me a message and I&apos;ll get back to you.
           </p>
+          <Link href="#contact">
             <button
                 type="submit"
                 className="
@@ -147,6 +149,7 @@ export default function Services() {
               >
                 Send message
               </button>
+              </Link>
         </div>
       </div>
     </section>

@@ -1,4 +1,5 @@
 // components/Pricing.js
+import Link from "next/link";
 
 const pricing = [
   {
@@ -128,11 +129,12 @@ export default function Pricing() {
 
         {/* Closing note (centered to avoid left squeeze) */}
         <div className="mt-24 max-w-2xl mx-auto lg:text-center">
-          <p className="text-lg leading-relaxed text-slate-400">
+          <p className="text-xl leading-relaxed text-slate-200">
             Want something more bespoke that&apos;s not on the menu? Just
             fill out the contact form here so that we can have a discovery call and discuss
             your project needs.
           </p>
+           <Link href="#contact">
                    <button
                 type="submit"
                 className="
@@ -145,6 +147,7 @@ export default function Pricing() {
               >
                 Send message
               </button>
+              </Link>
         </div>
       </div>
     </section>
