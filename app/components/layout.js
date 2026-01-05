@@ -514,7 +514,7 @@ w-[70%]
         <ul className="flex flex-col gap-[2vw] flex-wrap font-barlow
          text-white text-sm">
                <li className="footer-link"><Link href="#">Terms & Conditions</Link></li>
-               <li className="footer-link"><Link href="#">Privacy Policy</Link></li>
+               <li className="footer-link"><Link href="/privacy-policy">Privacy Policy</Link></li>
                <li className="footer-link"><Link href="#">Cookie Policy</Link></li>
         
            </ul>
@@ -531,7 +531,7 @@ border-t border-dashed border-white"></div>
 <div className="flex flex-col 
 font-barlow"> 
    <p className='text-md text-white font-barlow'>
-  info@killerperformancedigital.com</p>
+  hello@killerperformancedigital.com</p>
 </div>
 
       </div>
@@ -576,7 +576,7 @@ font-barlow">
         <ul className="flex flex-col gap-[2vw] flex-wrap font-barlow
          text-white text-sm">
                <li className="footer-link"><Link href="#">Terms & Conditions</Link></li>
-               <li className="footer-link"><Link href="#">Privacy Policy</Link></li>
+               <li className="footer-link"><Link href="/privacy-policy">Privacy Policy</Link></li>
                <li className="footer-link"><Link href="#">Cookie Policy</Link></li>
         
            </ul>
@@ -593,7 +593,7 @@ border-t border-dashed border-white"></div>
 <div className="flex flex-col 
 font-barlow"> 
    <p className='text-md text-white font-barlow'>
-  info@killerperformancedigital.com</p>
+  hello@killerperformancedigital.com</p>
 
 </div>
 
@@ -640,7 +640,7 @@ font-barlow">
         <ul className="flex flex-col gap-[2vw] flex-wrap font-barlow
          text-white text-sm">
                <li className="footer-link"><Link href="#">Terms & Conditions</Link></li>
-               <li className="footer-link"><Link href="#">Privacy Policy</Link></li>
+               <li className="footer-link"><Link href="/privacy-policy">Privacy Policy</Link></li>
                <li className="footer-link"><Link href="#">Cookie Policy</Link></li>
         
            </ul>
@@ -657,7 +657,7 @@ border-t border-dashed border-white"></div>
 <div className="flex flex-col 
 font-barlow"> 
    <p className='text-md text-white font-barlow'>
-  info@killerperformancedigital.com</p>
+  hello@killerperformancedigital.com</p>
 </div>
 
       </div>
@@ -703,7 +703,7 @@ font-barlow">
         <ul className="flex flex-col gap-[2vw] flex-wrap  font-barlow
          text-white text-sm w-[30%">
                <li className="footer-link"><Link href="#">Terms & Conditions</Link></li>
-               <li className="footer-link"><Link href="#">Privacy Policy</Link></li>
+               <li className="footer-link"><Link href="/privacy-policy">Privacy Policy</Link></li>
                <li className="footer-link"><Link href="#">Cookie Policy</Link></li>
         
            </ul>
@@ -720,7 +720,7 @@ border-t border-dashed border-white"></div>
 <div className="flex flex-col 
 font-barlow"> 
    <p className='text-md text-white font-barlow'>
-  info@killerperformancedigital.com</p>
+  hello@killerperformancedigital.com</p>
 </div>
 
       </div>
