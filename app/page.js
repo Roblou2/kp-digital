@@ -39,7 +39,7 @@ export default async function Home() {
   return (
    <>
      <Head>
-        <title>Web Design Agency London | Sleek Digital</title>
+        <title>Performance Marketing Agency | KP Digital</title>
         <meta name="description" content="We create memorable digital experiences for your brand. 
   Contact us today to learn more."/>
         <meta name="keywords" content="marketing agency, Google Ads help, data analytics setup, digital marketing agency" />

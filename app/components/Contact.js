@@ -6,36 +6,34 @@ export default function Contact() {
 
   const [status, setStatus] = useState("idle"); // idle | loading | success | error
 
-  async function handleSubmit(e) {
-    e.preventDefault();
-    setStatus("loading");
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  setStatus("loading");
 
-    const form = e.currentTarget;
-    const formData = new FormData(form);
+  const formData = new FormData(e.currentTarget);
 
-    const payload = {
-      name: formData.get("name"),
-      email: formData.get("email"),
-      phone: formData.get("phone"),
-      details: formData.get("details"),
-    };
+  const payload = {
+    name: formData.get("name"),
+    email: formData.get("email"),
+    phone: formData.get("phone") || "",
+    details: formData.get("details") || "",
+    gdprConsent: formData.get("gdprConsent") === "on",   // 👈 THIS is the only addition
+  };
 
-    try {
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-      });
+  try {
+    const res = await fetch("/api/contact", {
+      method: "POST",
+      body: JSON.stringify(payload),
+    });
 
-      if (!res.ok) throw new Error("Request failed");
+    if (!res.ok) throw new Error("Request failed");
 
-      setStatus("success");
-      form.reset();
-    } catch (err) {
-      console.error(err);
-      setStatus("error");
-    }
+    setStatus("success");
+  } catch (err) {
+    setStatus("error");
   }
+};
+
 
   return (
     <section
@@ -170,6 +168,25 @@ export default function Contact() {
                   placeholder="E.g. landing page rewrite, email sequence, funnel review…"
                 />
               </div>
+
+              <div className="mb-6">
+  <label className="flex items-start gap-3 text-sm md:text-base text-slate-200">
+    <input
+      type="checkbox"
+      name="gdprConsent"
+      required
+      className="mt-1 h-4 w-4 rounded border-slate-400 text-red-600 focus:ring-red-500"
+    />
+    <span>
+      I consent to you storing my details and contacting me about this enquiry.
+      I&apos;ve read and agree to the{" "}
+      <a href="/privacy-policy" className="underline underline-offset-2 hover:text-slate-100">
+        privacy policy
+      </a>.
+    </span>
+  </label>
+</div>
+
 
               {/* Submit */}
               <button
