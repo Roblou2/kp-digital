@@ -19,7 +19,7 @@ const services = [
       "Launch copy, offer pages, upsells, scripts and promotional sequences designed to generate immediate response.",
   },
   {
-    title: "Social Media & Ad Copy (Performance)",
+    title: "Paid & social media ads",
     description:
       "Scroll-stopping hooks, captions, angles and scripts for Meta, TikTok, Google, and LinkedIn — all built for performance.",
   },
