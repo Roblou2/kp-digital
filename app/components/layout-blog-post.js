@@ -389,8 +389,8 @@ fill={true}
         <ul className="flex flex-col gap-[2vw] flex-wrap font-barlow
          text-white text-sm">
                <li className="footer-link"><Link href="#">Terms & Conditions</Link></li>
-               <li className="footer-link"><Link href="#">Privacy Policy</Link></li>
-               <li className="footer-link"><Link href="#">Cookie Policy</Link></li>
+               <li className="footer-link"><Link href="/privacy-policy">Privacy Policy</Link></li>
+               <li className="footer-link"><Link href="/cookies-policy">Cookie Policy</Link></li>
         
            </ul>
         </div>
@@ -450,8 +450,8 @@ font-barlow">
         <ul className="flex flex-col gap-[2vw] flex-wrap font-barlow
          text-white text-sm">
                <li className="footer-link"><Link href="#">Terms & Conditions</Link></li>
-               <li className="footer-link"><Link href="#">Privacy Policy</Link></li>
-               <li className="footer-link"><Link href="#">Cookie Policy</Link></li>
+               <li className="footer-link"><Link href="/privacy-policy">Privacy Policy</Link></li>
+               <li className="footer-link"><Link href="/cookies-policy">Cookie Policy</Link></li>
         
            </ul>
         </div>
@@ -514,8 +514,8 @@ font-barlow">
         <ul className="flex flex-col gap-[2vw] flex-wrap font-barlow
          text-white text-sm">
                <li className="footer-link"><Link href="#">Terms & Conditions</Link></li>
-               <li className="footer-link"><Link href="#">Privacy Policy</Link></li>
-               <li className="footer-link"><Link href="#">Cookie Policy</Link></li>
+               <li className="footer-link"><Link href="/privacy-policy">Privacy Policy</Link></li>
+               <li className="footer-link"><Link href="/cookies-policy">Cookie Policy</Link></li>
         
            </ul>
         </div>
@@ -578,8 +578,8 @@ font-barlow">
         <ul className="flex flex-col gap-[2vw] flex-wrap  font-barlow
          text-white text-sm w-[30%">
                <li className="footer-link"><Link href="#">Terms & Conditions</Link></li>
-               <li className="footer-link"><Link href="#">Privacy Policy</Link></li>
-               <li className="footer-link"><Link href="#">Cookie Policy</Link></li>
+               <li className="footer-link"><Link href="/privacy-policy">Privacy Policy</Link></li>
+               <li className="footer-link"><Link href="/cookies-policy">Cookie Policy</Link></li>
         
            </ul>
         </div>
