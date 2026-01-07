@@ -418,7 +418,7 @@ border-t border-dashed border-white"></div>
 <div className="flex flex-col 
 font-barlow"> 
    <p className='text-md text-white font-barlow'>
-  info@killerperformancedigitgal.com</p>
+  hello@killerperformancedigitgal.com</p>
 </div>
 
       </div>
@@ -480,7 +480,7 @@ border-t border-dashed border-white"></div>
 <div className="flex flex-col 
 font-barlow"> 
    <p className='text-md text-white font-barlow'>
-  info@killerperformancedigitgal.com</p>
+  hello@killerperformancedigitgal.com</p>
 
 </div>
 
@@ -544,7 +544,7 @@ border-t border-dashed border-white"></div>
 <div className="flex flex-col 
 font-barlow"> 
    <p className='text-md text-white font-barlow'>
-  info@killerperformancedigitgal.com</p>
+  hello@killerperformancedigitgal.com</p>
 </div>
 
       </div>
@@ -608,7 +608,7 @@ border-t border-dashed border-white"></div>
 <div className="flex flex-col 
 font-barlow"> 
    <p className='text-md text-white font-barlow'>
-  info@killerperformancedigitgal.com</p>
+  hello@killerperformancedigitgal.com</p>
 </div>
 
       </div>
