@@ -20,6 +20,7 @@ const [status, setStatus] = useState("idle"); // idle | loading | success | erro
       email: formData.get("email"),
       phone: formData.get("phone"),
       details: formData.get("details"),
+      gdprConsent: formData.get("gdprConsent") === "on", 
     };
 
     try {
@@ -103,7 +104,7 @@ gap-8 font-barlow text-white text-md">
 <header className="sm:hidden xl:block desktops-extra-large
 max-w-[4000px] bg-black"> 
 
-<div className="relative h-[1000px]">
+<div className="relative h-[1200px]">
       <Image
      className="object-cover object-top"
         alt=""
@@ -314,6 +315,25 @@ border border-slate-200 rounded-lg w-full flex flex-col items-center justify-cen
         focus:border-red-500 focus:outline-none focus:ring-1 focus:ring-red-500"/>
   </div>
 
+                <div className="my-4">
+  <label className="flex items-start gap-3 text-sm md:text-base text-black">
+    <input
+      type="checkbox"
+      name="gdprConsent"
+      required
+      className="mt-1 h-4 w-4 rounded border-slate-400 text-red-600 focus:ring-red-500"
+    />
+    <span>
+      I consent to you storing my details and contacting me about this enquiry.
+      I&apos;ve read and agree to the{" "}
+      <a href="/privacy-policy" className="underline underline-offset-2 hover:text-slate-100">
+        privacy policy
+      </a>.
+    </span>
+  </label>
+</div>
+
+
   {/* Submit */}
   <button
       type="submit"
@@ -354,7 +374,7 @@ to-slate-700 to-50% shadow-[inset_0_1px_0_0_theme(colors.slate.500)]">
 </header>
 
  <header className="lg:block xl:hidden desktops
-sm:hidden w-[100%] bg-black h-[1000px]"> 
+sm:hidden w-[100%] bg-black h-[1200px]"> 
 
 <div className="relative h-[1000px]">
       <Image
@@ -557,6 +577,24 @@ border border-slate-200 rounded-lg w-full flex flex-col items-center justify-cen
         focus:border-red-500 focus:outline-none focus:ring-1 focus:ring-red-500"/>
   </div>
 
+                <div className="my-4">
+  <label className="flex items-start gap-3 text-sm md:text-base text-black">
+    <input
+      type="checkbox"
+      name="gdprConsent"
+      required
+      className="mt-1 h-4 w-4 rounded border-slate-400 text-red-600 focus:ring-red-500"
+    />
+    <span>
+      I consent to you storing my details and contacting me about this enquiry.
+      I&apos;ve read and agree to the{" "}
+      <a href="/privacy-policy" className="underline underline-offset-2 hover:text-slate-100">
+        privacy policy
+      </a>.
+    </span>
+  </label>
+</div>  
+
   {/* Submit */}
   <button
     type="submit"
@@ -750,7 +788,23 @@ that actually works.
         placeholder:text-slate-500
         focus:border-red-500 focus:outline-none focus:ring-1 focus:ring-red-500"/>
   </div>
-
+                <div className="my-4">
+  <label className="flex items-start gap-3 text-sm md:text-base text-black">
+    <input
+      type="checkbox"
+      name="gdprConsent"
+      required
+      className="mt-1 h-4 w-4 rounded border-slate-400 text-red-600 focus:ring-red-500"
+    />
+    <span>
+      I consent to you storing my details and contacting me about this enquiry.
+      I&apos;ve read and agree to the{" "}
+      <a href="/privacy-policy" className="underline underline-offset-2 hover:text-slate-100">
+        privacy policy
+      </a>.
+    </span>
+  </label>
+</div>  
   {/* Submit */}
   <button
     type="submit"
@@ -784,7 +838,7 @@ that actually works.
 <header className="md:block 
 sm:hidden lg:hidden max-w-[1099px] tablets"> 
 
-<div className="relative w-full h-[800px]">
+<div className="relative w-full h-[1000px]">
     
       <Image
         alt=""
@@ -947,6 +1001,24 @@ border border-slate-200 rounded-lg w-full flex flex-col items-center justify-cen
         placeholder:text-slate-500
         focus:border-red-500 focus:outline-none focus:ring-1 focus:ring-red-500"/>
   </div>
+
+                  <div className="my-4">
+  <label className="flex items-start gap-3 text-sm md:text-base text-black">
+    <input
+      type="checkbox"
+      name="gdprConsent"
+      required
+      className="mt-1 h-4 w-4 rounded border-slate-400 text-red-600 focus:ring-red-500"
+    />
+    <span>
+      I consent to you storing my details and contacting me about this enquiry.
+      I&apos;ve read and agree to the{" "}
+      <a href="/privacy-policy" className="underline underline-offset-2 hover:text-slate-100">
+        privacy policy
+      </a>.
+    </span>
+  </label>
+</div>  
 
   {/* Submit */}
   <button

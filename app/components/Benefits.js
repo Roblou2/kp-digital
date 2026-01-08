@@ -20,7 +20,7 @@ export default function Benefits() {
     <section className="border-t border-slate-800 bg-zinc-50">
       <div
         className="
-          py-28
+          py-28 lg:mt-12
           xl:px-[15%]
           lg:px-[10rem]
           md:px-[3rem]

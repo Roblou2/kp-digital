@@ -17,7 +17,7 @@ const handleSubmit = async (e) => {
     email: formData.get("email"),
     phone: formData.get("phone") || "",
     details: formData.get("details") || "",
-    gdprConsent: formData.get("gdprConsent") === "on",   // 👈 THIS is the only addition
+    gdprConsent: formData.get("gdprConsent") === "on",   
   };
 
   try {
