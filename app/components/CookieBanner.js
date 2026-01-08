@@ -25,12 +25,14 @@ export default function CookieBanner() {
     // store choice
     window.localStorage.setItem(STORAGE_KEY, value);
 
-    // update consent mode / dataLayer info for GA4
-    window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({
-      event: "consent_update",
-      analytics_storage: value === "accepted" ? "granted" : "denied",
-    });
+window.dataLayer = window.dataLayer || [];
+window.dataLayer.push({
+  event: "consent_update",
+  consent: {
+    analytics_storage: value === "accepted" ? "granted" : "denied",
+  },
+});
+
 
     // load GTM immediately if accepted
     if (value === "accepted") {

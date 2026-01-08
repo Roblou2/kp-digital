@@ -11,20 +11,24 @@ export default function AnalyticsLoader() {
     const consent = window.localStorage.getItem(STORAGE_KEY);
 
     // GTM requires dataLayer defined EARLY
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){ window.dataLayer.push(arguments); }
+   window.dataLayer = window.dataLayer || [];
+window.dataLayer.push({
+  event: "default_consent",
+  consent: {
+    analytics_storage: "denied",
+    ad_storage: "denied",
+  },
+});
 
-    // Default (before consent)
-    gtag("consent", "default", {
-      ad_storage: "denied",
-      analytics_storage: "denied"
-    });
 
     // If previously accepted → allow analytics now
     if (consent === "accepted") {
-      gtag("consent", "update", {
-        analytics_storage: "granted"
-      });
+  window.dataLayer.push({
+  event: "consent_update",
+  consent: {
+    analytics_storage: "granted",
+  },
+});
 
       loadGTM();
     }
