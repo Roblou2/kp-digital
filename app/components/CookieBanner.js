@@ -6,11 +6,9 @@ const STORAGE_KEY = "kp_analytics_consent";
 
 export default function CookieBanner() {
   const [showModal, setShowModal] = useState(false);
-  const [analyticsToggle, setAnalyticsToggle] = useState(true); // default ON in modal
+  const [analyticsToggle, setAnalyticsToggle] = useState(true);
   const [dismissed, setDismissed] = useState(false);
 
-  // Always render a wrapper so SSR has something stable.
-  // Inside, we decide visibility on the client.
   let visible = false;
 
   if (typeof window !== "undefined") {
@@ -19,36 +17,32 @@ export default function CookieBanner() {
     visible = !dismissed && !alreadyChosen;
   }
 
+  const loadGTM = () => {
+    const gtmId = process.env.NEXT_PUBLIC_GTM_ID;
+    if (!gtmId) return;
+
+    // Prevent duplicates
+    if (document.querySelector(`script[data-gtm-id="${gtmId}"]`)) return;
+
+    // Define dataLayer before GTM loads (good practice)
+    window.dataLayer = window.dataLayer || [];
+
+    const script = document.createElement("script");
+    script.async = true;
+    script.src = `https://www.googletagmanager.com/gtm.js?id=${gtmId}`;
+    script.dataset.gtmId = gtmId;
+    document.head.appendChild(script);
+  };
+
   const applyConsent = (value) => {
     if (typeof window === "undefined") return;
 
-    // store choice
+    // Store choice
     window.localStorage.setItem(STORAGE_KEY, value);
 
-window.dataLayer = window.dataLayer || [];
-window.dataLayer.push({
-  event: "consent_update",
-  consent: {
-    analytics_storage: value === "accepted" ? "granted" : "denied",
-  },
-});
-
-
-    // load GTM immediately if accepted
+    // Only load GTM if accepted
     if (value === "accepted") {
-      const gtmId = process.env.NEXT_PUBLIC_GTM_ID;
-      if (gtmId) {
-        const existing = document.querySelector(
-          `script[data-gtm-id="${gtmId}"]`
-        );
-        if (!existing) {
-          const script = document.createElement("script");
-          script.async = true;
-          script.src = `https://www.googletagmanager.com/gtm.js?id=${gtmId}`;
-          script.dataset.gtmId = gtmId;
-          document.head.appendChild(script);
-        }
-      }
+      loadGTM();
     }
   };
 
