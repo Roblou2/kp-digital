@@ -380,7 +380,7 @@ w-[80%]
 
 <header className="md:hidden w-[100%] mobiles max-w-[649px]"> 
 
-<div className="relative w-full h-[620px]">
+<div className="relative w-full h-[650px] -mt-10">
       <Image
      className=""
         alt=""
@@ -414,22 +414,22 @@ onClick={onToggleMenu}
 </div>
 
       </div>
-<div className="top-[8rem] max-w-[649px] absolute  
+<div className="top-[6rem] max-w-[649px] absolute  
 right-[3rem] left-[3rem]">
      <h2 className="font-barlow text-white
-      text-xl relative font-bold leading-5">
+      text-3xl relative font-bold leading-2">
       Performance marketing for SME<span className="lowercase">s</span>
           </h2>
       <h2 className="font-sans font-semibold text-white
-       text-lg relative w-[100%] leading-3">
+       text-2xl relative w-[100%] leading-3">
           <span className="neon-red">Better</span> websites </h2>
       
           <h2 className="font-sans font-semibold text-white
-       text-lg relative w-[100%] leading-3">
+       text-2xl relative w-[100%] leading-3">
     <span className="neon-red">Stronger</span> performance
     </h2>
 <h2 className="font-sans font-semibold text-white
-       text-lg relative w-[100%] leading-3">
+       text-2xl relative w-[100%] leading-3">
 <span className="neon-red">More</span> leads
           </h2>
 
