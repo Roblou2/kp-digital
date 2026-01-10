@@ -59,3 +59,9 @@ ul.blog {
     list-style: disc;
     padding-left: 3rem;
 }
+
+@keyframes shine {
+  0% { transform: translateX(-120%); }
+  60% { transform: translateX(120%); }
+  100% { transform: translateX(120%); }
+}

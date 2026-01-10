@@ -147,42 +147,76 @@ fill={true}
 
 
       <h2 className="font-barlow text-white
-      text-4xl relative font-bold uppercase">
+      text-6xl relative font-semibold">
       Performance marketing for SME<span className="lowercase">s</span>
           </h2>
       <h2 className="font-sans font-semibold text-white
-       text-3xl relative uppercase w-[60%]">
+       text-4xl relative w-[60%]">
           <span className="neon-red">Better</span> websites </h2>
       
           <h2 className="font-sans font-semibold text-white
-       text-3xl relative uppercase w-[60%]">
+       text-4xl relative w-[60%]">
     <span className="neon-red">Stronger</span> performance
     </h2>
 <h2 className="font-sans font-semibold text-white
-       text-3xl relative uppercase w-[60%]">
+       text-4xl relative w-[60%]">
 <span className="neon-red">More</span> leads
           </h2>
 
+<div className="relative w-full">
     
       <h3 className="font-sans text-white
-w-[60%]
-      text-2xl relative">
+w-[80%]
+      text-3xl">
    Website optimisation, high-converting landing pages, 
    complete GA4 & GTM tracking and 
    focused Google Ads campaigns which generate leads.
-          </h3>
 
+          </h3>
+     <span
+        className="
+          absolute left-0 
+          h-[2px] w-full bg-white opacity-50
+          transition-all duration-500
+         
+        "
+      />
           <div className="font-barlow  
      top-[2rem]  text-3xl 
-   relative">
-      <button className="hero-contact
-       box-content 
-        text-white bg-pink-600
-        font-bold font-barlow py-[12px] px-[12px]
-        rounded shadow-[1px_1px_5px_-1px_#4c4c4c]">
-       <Link href="/contact">Book a free strategy call</Link>
-       
-       </button>
+   relative flex justify-end">
+<button
+  className="
+    relative overflow-hidden rounded-lg
+    px-6 py-3
+    font-barlow font-bold text-white
+    shadow-lg transition-all duration-300
+    bg-gradient-to-r from-[#090fbd] to-[#ff3131]
+    hover:shadow-[0_20px_50px_-20px_rgba(255,49,49,0.9)]
+    hover:scale-[1.02]
+    active:scale-[0.98]
+  "
+>
+  {/* shimmer sweep */}
+  <span
+    className="
+      pointer-events-none absolute inset-0
+      translate-x-[-120%]
+      bg-gradient-to-r from-transparent via-white/35 to-transparent
+      animate-[shine_2.2s_ease-in-out_infinite]
+    "
+  />
+
+  {/* optional glossy highlight */}
+  <span className="pointer-events-none absolute inset-0 bg-gradient-to-b from-white/20 to-transparent" />
+
+  <Link href="/contact" className="relative z-10">
+    Book a free strategy call
+  </Link>
+</button>
+
+
+
+          </div>
           </div>
           </div>
 
@@ -269,26 +303,26 @@ sm:hidden w-[100%] bg-black h-[850px]">
 
         <div className="absolute text-left top-[10rem] left-[10rem] right-[10rem]">
         <h2 className="font-barlow text-white
-      text-3xl relative font-bold uppercase">
+      text-5xl relative font-semibold">
       Performance marketing for SME<span className="lowercase">s</span>
           </h2>
       <h2 className="font-sans font-semibold text-white
-       text-2xl relative uppercase w-[60%]">
+       text-3xl relative w-[60%]">
           <span className="neon-red">Better</span> websites </h2>
       
           <h2 className="font-sans font-semibold text-white
-       text-2xl relative uppercase w-[60%]">
+       text-3xl relative w-[60%]">
     <span className="neon-red">Stronger</span> performance
     </h2>
 <h2 className="font-sans font-semibold text-white
-       text-2xl relative uppercase w-[60%]">
+       text-3xl relative w-[60%]">
 <span className="neon-red">More</span> leads
           </h2>
 
     
       <h3 className="font-sans text-white
-w-[60%]
-      text-xl relative">
+w-[80%]
+      text-2xl relative">
    Website optimisation, high-converting landing pages, 
    complete GA4 & GTM tracking and 
    focused Google Ads campaigns which generate leads.
@@ -297,14 +331,47 @@ w-[60%]
           <div className="font-barlow  
      top-[2rem]  text-3xl 
    relative">
-      <button className="hero-contact
-       box-content 
-        text-white bg-pink-600
-        font-bold font-barlow py-[12px] px-[12px]
-        rounded shadow-[1px_1px_5px_-1px_#4c4c4c]">
-       <Link href="/contact">Book a free strategy call</Link>
-       
-       </button>
+         <span
+        className="
+          absolute left-0 
+          h-[2px] w-full bg-white opacity-50
+          transition-all duration-500
+         
+        "
+      />
+          <div className="font-barlow  
+     top-[2rem]  text-2xl 
+   relative flex justify-end">
+<button
+  className="
+    relative overflow-hidden rounded-lg
+    px-6 py-3
+    font-barlow font-bold text-white
+    shadow-lg transition-all duration-300
+    bg-gradient-to-r from-[#090fbd] to-[#ff3131]
+    hover:shadow-[0_20px_50px_-20px_rgba(255,49,49,0.9)]
+    hover:scale-[1.02]
+    active:scale-[0.98]
+  "
+>
+  {/* shimmer sweep */}
+  <span
+    className="
+      pointer-events-none absolute inset-0
+      translate-x-[-120%]
+      bg-gradient-to-r from-transparent via-white/35 to-transparent
+      animate-[shine_2.2s_ease-in-out_infinite]
+    "
+  />
+
+  {/* optional glossy highlight */}
+  <span className="pointer-events-none absolute inset-0 bg-gradient-to-b from-white/20 to-transparent" />
+
+  <Link href="/contact" className="relative z-10">
+    Book a free strategy call
+  </Link>
+</button>
+</div>
           </div>
           </div>
 
