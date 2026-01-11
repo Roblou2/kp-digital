@@ -1,6 +1,7 @@
 
 import LayoutBlank from "../components/layout-blank.js"
-import ComingSoon from "../components/coming-soon.js"
+import AboutContact from "../components/about-contact.js";
+import AboutSection from "../components/home-about.js";
 
 export const metadata = {
     title: "About us | Sleek Digital Designs",
@@ -36,7 +37,8 @@ const AboutPage = () => {
     return (
         <>
             <LayoutBlank>
-            <ComingSoon />
+            <AboutSection />
+            <AboutContact/>
         </LayoutBlank>
         </>
     )
