@@ -5,17 +5,17 @@ import matter from "gray-matter";
 import Link from "next/link";
 
 export const metadata = {
-  title: "Blog | Sleek Digital Designs",
+  title: "Blog | Killer performance digital",
   description: "Insights, guides and tips to turbo-charge your digital marketing efforts",
 
   openGraph: {
     title: "Blog",
     description: "Insights, guides and tips to turbo-charge your digital marketing efforts",
-    url: "https://sleekdigitaldesigns.com/blog",
+    url: "https://killerperformancedigital.com/blog",
     siteName: "Sleek Digital Designs",
     images: [
       {
-        url: "https://sleek-digital-logo-black-250.png",
+        url: "/images/killer-logo-black-bg-250.jpg",
         width: 600,
         height: 300,
         alt: "Blog OG image",
@@ -29,7 +29,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "Blog",
     description: "Insights, guides and tips to turbo-charge your digital marketing efforts",
-    images: ["https://sleek-digital-logo-black-250.png"],
+    images: ["/images/killer-logo-black-bg-250.jpg"],
   },
 };
 

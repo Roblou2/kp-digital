@@ -15,7 +15,7 @@ export const metadata = {
     siteName: "Killer Performance Digital",
     images: [
       {
-        url: "/images/killer-logo-black-bg-250.png",
+        url: "/images/killer-logo-black-bg-250.jpg",
         width: 600,
         height: 300,
         alt: "Killer Performance Digital OG image",
@@ -29,7 +29,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "Performance marketing agency | KP Digital",
     description: "We are the first choice digital marketing agency. Learn how our digital marketing services can grow your business",
-    images: ["/images/killer-logo-black-bg-250.png"],
+    images: ["/images/killer-logo-black-bg-250.jpg"],
   },
 };
 

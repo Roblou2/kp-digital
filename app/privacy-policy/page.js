@@ -13,7 +13,7 @@ export const metadata = {
     siteName: "Killer Performance Digital",
     images: [
       {
-        url: "/images/killer-logo-black-bg-250.png",
+        url: "/images/killer-logo-black-bg-250.jpg",
         width: 600,
         height: 300,
         alt: "Killer Performance Digital OG image",
@@ -27,7 +27,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "Privacy Policy | KP Digital",
     description: "",
-    images: ["/images/killer-logo-black-bg-250.png"],
+    images: ["/images/killer-logo-black-bg-250.jpg"],
   },
 };
 

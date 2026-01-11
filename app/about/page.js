@@ -4,17 +4,17 @@ import AboutContact from "../components/about-contact.js";
 import AboutSection from "../components/home-about.js";
 
 export const metadata = {
-    title: "About us | Sleek Digital Designs",
+    title: "About us | Killer performance digital",
     description: "Learn where our roots come from and what makes us unique",
   
     openGraph: {
       title: "About us",
       description: "Learn where our roots come from and what makes us unique",
-      url: "https://sleekdigitaldesigns.com/about",
+      url: "https://killerperformancedigital.com/about",
       siteName: "Sleek Digital Designs",
       images: [
         {
-          url: "https://sleek-digital-logo-black-250.png",
+          url: "/images/killer-logo-black-bg-250.jpg",
           width: 600,
           height: 300,
           alt: "About us OG image",
@@ -28,7 +28,7 @@ export const metadata = {
       card: "summary_large_image",
       title: "About us",
       description: "Learn where our roots come from and what makes us unique",
-      images: ["https://sleek-digital-logo-black-250.png"],
+      images: ["/images/killer-logo-black-bg-250.jpg"],
     },
   };
 
