@@ -595,7 +595,7 @@ border-t border-dashed border-white"></div>
 <div className="flex flex-col 
 font-barlow"> 
    <p className='text-md text-white font-barlow'>
-  info@killerperformancedigital.com</p>
+  hello@killerperformancedigital.com</p>
 </div>
 
       </div>
