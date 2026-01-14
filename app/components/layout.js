@@ -137,6 +137,7 @@ fill={true}
 
         <li className="nav-link"><Link href="/about">About</Link></li>
         <li className="nav-link"><Link href="/blog">Blog</Link></li>
+        <li className="nav-link"><Link href="/contact">Contact</Link></li>
       
     </ul>
 
@@ -295,7 +296,7 @@ sm:hidden w-[100%] bg-black h-[850px]">
        
         <li className="nav-link"><Link href="/about">About</Link></li>
         <li className="nav-link"><Link href="/blog">Blog</Link></li>
-      
+        <li className="nav-link"><Link href="/contact">Contact</Link></li>
     </ul>
  
     </div>

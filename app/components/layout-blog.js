@@ -133,7 +133,7 @@ fill={true}
            
             <li className="nav-link"><Link href="/about">About</Link></li>
             <li className="nav-link"><Link href="/blog">Blog</Link></li>
-          
+            <li className="nav-link"><Link href="/contact">Contact</Link></li>
         </ul>
      
         </div>
@@ -223,7 +223,7 @@ fill={true}
            
             <li className="nav-link"><Link href="/about">About</Link></li>
             <li className="nav-link"><Link href="/blog">Blog</Link></li>
-          
+            <li className="nav-link"><Link href="/contact">Contact</Link></li>
         </ul>
      
         </div>
