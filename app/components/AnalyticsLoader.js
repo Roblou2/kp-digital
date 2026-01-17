@@ -2,9 +2,12 @@
 
 import { useEffect } from "react";
 
-const STORAGE_KEY = "kp_analytics_consent";
+
+const STORAGE_KEY = "kp_consent_v1";
+
 
 function injectGTM(gtmId) {
+  
   if (!gtmId) return;
 
   // Prevent duplicates
@@ -12,7 +15,16 @@ function injectGTM(gtmId) {
 
   // Always define dataLayer before GTM loads (best practice)
   window.dataLayer = window.dataLayer || [];
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    event: "default_consent",
+    analytics_storage: "denied",
+    ad_storage: "denied",
+    ad_user_data: "denied",
+    ad_personalization: "denied",
+  });
   window.dataLayer.push({ "gtm.start": Date.now(), event: "gtm.js" });
+  
 
   // Preserve GTM preview params if present (Tag Assistant)
   const qs = new URLSearchParams(window.location.search);
@@ -37,8 +49,18 @@ export default function AnalyticsLoader() {
   useEffect(() => {
     if (typeof window === "undefined") return;
 
-    const consent = window.localStorage.getItem(STORAGE_KEY);
-    if (consent !== "accepted") return;
+    const raw = window.localStorage.getItem(STORAGE_KEY);
+    if (!raw) return;
+    
+    let consent;
+    try {
+      consent = JSON.parse(raw);
+    } catch {
+      return;
+    }
+    
+    if (!consent.analytics && !consent.ads) return; // load GTM only if something allowed
+    
 
     const gtmId = process.env.NEXT_PUBLIC_GTM_ID;
     injectGTM(gtmId);

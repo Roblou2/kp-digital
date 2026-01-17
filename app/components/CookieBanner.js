@@ -2,7 +2,8 @@
 
 import { useState } from "react";
 
-const STORAGE_KEY = "kp_analytics_consent";
+const STORAGE_KEY = "kp_consent_v1";
+
 
 function injectGTM(gtmId) {
   if (!gtmId) return;
@@ -12,7 +13,16 @@ function injectGTM(gtmId) {
 
   // Always define dataLayer before GTM loads (best practice)
   window.dataLayer = window.dataLayer || [];
+
+  window.dataLayer.push({
+    event: "default_consent",
+    analytics_storage: "denied",
+    ad_storage: "denied",
+    ad_user_data: "denied",
+    ad_personalization: "denied",
+  });
   window.dataLayer.push({ "gtm.start": Date.now(), event: "gtm.js" });
+  
 
   // Preserve GTM preview params if present (Tag Assistant)
   const qs = new URLSearchParams(window.location.search);
@@ -39,6 +49,8 @@ export default function CookieBanner() {
   const [dismissed, setDismissed] = useState(false);
 
   let visible = false;
+  const [adsToggle, setAdsToggle] = useState(false); // default OFF
+
 
   if (typeof window !== "undefined") {
     const saved = window.localStorage.getItem(STORAGE_KEY);
@@ -46,36 +58,52 @@ export default function CookieBanner() {
     visible = !dismissed && !alreadyChosen;
   }
 
-  const applyConsent = (value) => {
-    if (typeof window === "undefined") return;
-
-    // store choice
-    window.localStorage.setItem(STORAGE_KEY, value);
-
-    // load GTM immediately if accepted
-    if (value === "accepted") {
+  function updateConsent({ analytics, ads }) {
+    // store choices
+    window.localStorage.setItem(
+      STORAGE_KEY,
+      JSON.stringify({ analytics, ads })
+    );
+  
+    // update Google consent signals
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: "consent_update",
+      analytics_storage: analytics ? "granted" : "denied",
+      ad_storage: ads ? "granted" : "denied",
+      ad_user_data: ads ? "granted" : "denied",
+      ad_personalization: ads ? "granted" : "denied",
+    });
+  
+    // If either analytics OR ads is allowed, load GTM
+    if (analytics || ads) {
       const gtmId = process.env.NEXT_PUBLIC_GTM_ID;
       injectGTM(gtmId);
     }
-  };
+  }
+  
 
   const handleReject = () => {
-    applyConsent("rejected");
+    updateConsent({ analytics: false, ads: false });
     setDismissed(true);
   };
+  
 
   const handleAccept = () => {
-    applyConsent("accepted");
+    updateConsent({ analytics: true, ads: false });
     setDismissed(true);
   };
+  
 
   const handleSavePreferences = () => {
-    applyConsent(analyticsToggle ? "accepted" : "rejected");
+    updateConsent({ analytics: analyticsToggle, ads: adsToggle });
     setShowModal(false);
     setDismissed(true);
   };
+  
 
   return (
+    
     <div suppressHydrationWarning>
       {!visible ? null : (
         <>
@@ -94,6 +122,7 @@ export default function CookieBanner() {
                     improve it. Analytics only run if you choose to allow them.
                   </p>
                 </div>
+
 
                 {/* Buttons */}
                 <div className="flex flex-col flex-col-reverse gap-2 md:flex-row md:items-center">
@@ -200,6 +229,26 @@ export default function CookieBanner() {
                     <span className="text-sm text-slate-200">Allow</span>
                   </label>
                 </div>
+
+                {/* Ads */}
+<div className="mt-4 flex items-start justify-between rounded-xl border border-slate-700 bg-slate-900 px-4 py-4">
+  <div>
+    <p className="font-semibold text-slate-50">Marketing cookies</p>
+    <p className="text-sm text-slate-400">
+      Used for measuring and improving ads (Google Ads).
+    </p>
+  </div>
+
+  <label className="inline-flex cursor-pointer items-center gap-2">
+    <input
+      type="checkbox"
+      checked={adsToggle}
+      onChange={(e) => setAdsToggle(e.target.checked)}
+      className="h-4 w-4 rounded border-slate-500 text-red-600 focus:ring-red-500"
+    />
+    <span className="text-sm text-slate-200">Allow</span>
+  </label>
+</div>
 
                 {/* Modal buttons */}
                 <div className="mt-6 flex justify-end gap-3">
