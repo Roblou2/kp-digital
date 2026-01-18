@@ -4,6 +4,11 @@ import { useEffect } from "react";
 
 const STORAGE_KEY = "kp_consent_v1";
 
+function gtag() {
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push(arguments);
+}
+
 function injectGTM(gtmId) {
   if (!gtmId) return;
 
@@ -13,9 +18,8 @@ function injectGTM(gtmId) {
   // Define dataLayer BEFORE loading GTM
   window.dataLayer = window.dataLayer || [];
 
-  // Default consent = denied (before GTM loads)
-  window.dataLayer.push({
-    event: "default_consent",
+  // ✅ Proper Consent Mode default (DENIED) BEFORE GTM loads
+  gtag("consent", "default", {
     analytics_storage: "denied",
     ad_storage: "denied",
     ad_user_data: "denied",
@@ -58,9 +62,8 @@ function applySavedConsentIfAny() {
   const analytics = !!consent.analytics;
   const ads = !!consent.ads;
 
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({
-    event: "consent_update",
+  // ✅ Proper Consent Mode update
+  gtag("consent", "update", {
     analytics_storage: analytics ? "granted" : "denied",
     ad_storage: ads ? "granted" : "denied",
     ad_user_data: ads ? "granted" : "denied",
@@ -72,7 +75,7 @@ export default function AnalyticsLoader() {
   useEffect(() => {
     const gtmId = process.env.NEXT_PUBLIC_GTM_ID;
 
-    // Always inject GTM (default denied happens inside injectGTM)
+    // Always inject GTM (with default denied)
     injectGTM(gtmId);
 
     // If the user already chose previously, apply it immediately

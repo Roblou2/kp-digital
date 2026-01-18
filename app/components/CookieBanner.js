@@ -4,6 +4,11 @@ import { useMemo, useState } from "react";
 
 const STORAGE_KEY = "kp_consent_v1";
 
+function gtag() {
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push(arguments);
+}
+
 function readSavedConsent() {
   if (typeof window === "undefined") return null;
 
@@ -25,22 +30,20 @@ function readSavedConsent() {
 export default function CookieBanner() {
   const [showModal, setShowModal] = useState(false);
   const [analyticsToggle, setAnalyticsToggle] = useState(true);
-  const [adsToggle, setAdsToggle] = useState(true);
+
+  // ✅ IMPORTANT: default marketing OFF (your current code had this true)
+  const [adsToggle, setAdsToggle] = useState(false);
+
   const [dismissed, setDismissed] = useState(false);
 
-  // Only read localStorage in the browser
   const savedConsent = useMemo(() => readSavedConsent(), []);
-
-  // On the server, this renders null. On the client it can render the banner.
-  const visible =
-    typeof window !== "undefined" && !dismissed && !savedConsent;
+  const visible = typeof window !== "undefined" && !dismissed && !savedConsent;
 
   function updateConsent({ analytics, ads }) {
     window.localStorage.setItem(STORAGE_KEY, JSON.stringify({ analytics, ads }));
 
-    window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({
-      event: "consent_update",
+    // ✅ Proper Consent Mode update
+    gtag("consent", "update", {
       analytics_storage: analytics ? "granted" : "denied",
       ad_storage: ads ? "granted" : "denied",
       ad_user_data: ads ? "granted" : "denied",
