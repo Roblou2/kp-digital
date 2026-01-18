@@ -1,10 +1,10 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 
 const STORAGE_KEY = "kp_consent_v1";
 
-function getSavedConsent() {
+function readSavedConsent() {
   if (typeof window === "undefined") return null;
 
   const raw = window.localStorage.getItem(STORAGE_KEY);
@@ -12,44 +12,32 @@ function getSavedConsent() {
 
   try {
     const parsed = JSON.parse(raw);
-    if (
-      typeof parsed?.analytics === "boolean" ||
-      typeof parsed?.ads === "boolean"
-    ) {
-      return { analytics: !!parsed.analytics, ads: !!parsed.ads };
-    }
-    return null;
+    const hasChoice =
+      typeof parsed?.analytics === "boolean" || typeof parsed?.ads === "boolean";
+    if (!hasChoice) return null;
+
+    return { analytics: !!parsed.analytics, ads: !!parsed.ads };
   } catch {
     return null;
   }
 }
 
 export default function CookieBanner() {
-  const [hydrated, setHydrated] = useState(false);
-  const [dismissed, setDismissed] = useState(false);
-
   const [showModal, setShowModal] = useState(false);
   const [analyticsToggle, setAnalyticsToggle] = useState(true);
-  const [adsToggle, setAdsToggle] = useState(false);
+  const [adsToggle, setAdsToggle] = useState(true);
+  const [dismissed, setDismissed] = useState(false);
 
-  // Only flips once; acceptable effect use
-  useEffect(() => {
-    setHydrated(true);
-  }, []);
+  // Only read localStorage in the browser
+  const savedConsent = useMemo(() => readSavedConsent(), []);
 
-  // Read consent only after hydration
-  const savedConsent = useMemo(() => {
-    if (!hydrated) return null;
-    return getSavedConsent();
-  }, [hydrated]);
-
-  const visible = hydrated && !dismissed && !savedConsent;
+  // On the server, this renders null. On the client it can render the banner.
+  const visible =
+    typeof window !== "undefined" && !dismissed && !savedConsent;
 
   function updateConsent({ analytics, ads }) {
-    // store choices
     window.localStorage.setItem(STORAGE_KEY, JSON.stringify({ analytics, ads }));
 
-    // update Google consent signals
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push({
       event: "consent_update",
@@ -85,19 +73,15 @@ export default function CookieBanner() {
         <div className="fixed inset-x-0 bottom-0 z-40">
           <div className="mx-auto mb-4 max-w-5xl rounded-2xl border border-slate-800 bg-slate-950/95 px-5 py-4 shadow-[0_18px_45px_rgba(0,0,0,0.6)] backdrop-blur">
             <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between md:gap-6">
-              {/* Text */}
               <div className="text-sm text-slate-200 md:text-[15px]">
-                <p className="font-semibold text-slate-50">
-                  Cookies & analytics
-                </p>
+                <p className="font-semibold text-slate-50">Cookies & analytics</p>
                 <p className="mt-1 text-slate-300">
-                  We use essential cookies to make the site work, and optional
-                  analytics cookies to understand how the site is used and
-                  improve it. Analytics only run if you choose to allow them.
+                  We use essential cookies to make the site work, and optional analytics
+                  cookies to understand how the site is used and improve it. Analytics only
+                  run if you choose to allow them.
                 </p>
               </div>
 
-              {/* Buttons */}
               <div className="flex flex-col flex-col-reverse gap-2 md:flex-row md:items-center">
                 <button
                   onClick={handleReject}
@@ -123,8 +107,8 @@ export default function CookieBanner() {
             </div>
 
             <p className="mt-2 text-xs text-slate-400">
-              You can change your choice at any time by clearing cookies in your
-              browser. For full details, see the{" "}
+              You can change your choice at any time by clearing cookies in your browser.
+              For full details, see the{" "}
               <a
                 href="/cookies-policy"
                 className="underline underline-offset-2 hover:text-slate-200"
@@ -140,40 +124,29 @@ export default function CookieBanner() {
         {showModal && (
           <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur">
             <div className="w-full max-w-xl rounded-2xl border border-slate-700 bg-slate-950 px-6 py-6 shadow-xl">
-              <h2 className="text-xl font-semibold text-white">
-                Cookie preferences
-              </h2>
+              <h2 className="text-xl font-semibold text-white">Cookie preferences</h2>
 
               <p className="mt-2 text-sm text-slate-300">
                 Choose which types of cookies you want to allow.
               </p>
 
-              {/* Essential */}
               <div className="mt-6 flex items-start justify-between rounded-xl border border-slate-700 bg-slate-900 px-4 py-4">
                 <div>
-                  <p className="font-semibold text-slate-50">
-                    Essential cookies
-                  </p>
+                  <p className="font-semibold text-slate-50">Essential cookies</p>
                   <p className="text-sm text-slate-400">
-                    Required for basic site functionality. These cannot be
-                    disabled.
+                    Required for basic site functionality. These cannot be disabled.
                   </p>
                 </div>
-
                 <span className="rounded-md bg-slate-700 px-3 py-1 text-xs text-slate-300">
                   Always on
                 </span>
               </div>
 
-              {/* Analytics */}
               <div className="mt-4 flex items-start justify-between rounded-xl border border-slate-700 bg-slate-900 px-4 py-4">
                 <div>
-                  <p className="font-semibold text-slate-50">
-                    Analytics cookies
-                  </p>
+                  <p className="font-semibold text-slate-50">Analytics cookies</p>
                   <p className="text-sm text-slate-400">
-                    Help us understand how the site is used so we can improve
-                    it.
+                    Help us understand how the site is used so we can improve it.
                   </p>
                 </div>
 
@@ -188,12 +161,9 @@ export default function CookieBanner() {
                 </label>
               </div>
 
-              {/* Marketing */}
               <div className="mt-4 flex items-start justify-between rounded-xl border border-slate-700 bg-slate-900 px-4 py-4">
                 <div>
-                  <p className="font-semibold text-slate-50">
-                    Marketing cookies
-                  </p>
+                  <p className="font-semibold text-slate-50">Marketing cookies</p>
                   <p className="text-sm text-slate-400">
                     Used for measuring and improving ads (Google Ads).
                   </p>
