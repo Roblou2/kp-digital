@@ -32,7 +32,7 @@ export default function CookieBanner() {
   const [analyticsToggle, setAnalyticsToggle] = useState(true);
 
   // ✅ IMPORTANT: default marketing OFF (your current code had this true)
-  const [adsToggle, setAdsToggle] = useState(false);
+  const [adsToggle, setAdsToggle] = useState(true);
 
   const [dismissed, setDismissed] = useState(false);
 
@@ -57,9 +57,10 @@ export default function CookieBanner() {
   };
 
   const handleAccept = () => {
-    updateConsent({ analytics: true, ads: false });
+    updateConsent({ analytics: true, ads: true });
     setDismissed(true);
   };
+  
 
   const handleSavePreferences = () => {
     updateConsent({ analytics: analyticsToggle, ads: adsToggle });
