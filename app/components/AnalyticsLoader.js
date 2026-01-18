@@ -9,16 +9,28 @@ function gtag() {
   window.dataLayer.push(arguments);
 }
 
+function readSavedConsent() {
+  const raw = window.localStorage.getItem(STORAGE_KEY);
+  if (!raw) return null;
+  try {
+    const parsed = JSON.parse(raw);
+    const hasChoice =
+      typeof parsed?.analytics === "boolean" || typeof parsed?.ads === "boolean";
+    if (!hasChoice) return null;
+    return { analytics: !!parsed.analytics, ads: !!parsed.ads };
+  } catch {
+    return null;
+  }
+}
+
 function injectGTM(gtmId) {
   if (!gtmId) return;
 
-  // Prevent duplicates
   if (document.querySelector(`script[data-gtm-id="${gtmId}"]`)) return;
 
-  // Define dataLayer BEFORE loading GTM
   window.dataLayer = window.dataLayer || [];
 
-  // ✅ Proper Consent Mode default (DENIED) BEFORE GTM loads
+  // 1) Default denied
   gtag("consent", "default", {
     analytics_storage: "denied",
     ad_storage: "denied",
@@ -26,10 +38,20 @@ function injectGTM(gtmId) {
     ad_personalization: "denied",
   });
 
-  // GTM start event
+  // 2) If consent was previously saved, apply it NOW (before gtm.js)
+  const saved = readSavedConsent();
+  if (saved) {
+    gtag("consent", "update", {
+      analytics_storage: saved.analytics ? "granted" : "denied",
+      ad_storage: saved.ads ? "granted" : "denied",
+      ad_user_data: saved.ads ? "granted" : "denied",
+      ad_personalization: saved.ads ? "granted" : "denied",
+    });
+  }
+
+  // 3) Now fire gtm.js and load GTM
   window.dataLayer.push({ "gtm.start": Date.now(), event: "gtm.js" });
 
-  // Preserve GTM preview params if present
   const qs = new URLSearchParams(window.location.search);
   const gtmPreview = qs.get("gtm_preview");
   const gtmAuth = qs.get("gtm_auth");
@@ -48,38 +70,9 @@ function injectGTM(gtmId) {
   document.head.appendChild(script);
 }
 
-function applySavedConsentIfAny() {
-  const raw = window.localStorage.getItem(STORAGE_KEY);
-  if (!raw) return;
-
-  let consent;
-  try {
-    consent = JSON.parse(raw);
-  } catch {
-    return;
-  }
-
-  const analytics = !!consent.analytics;
-  const ads = !!consent.ads;
-
-  // ✅ Proper Consent Mode update
-  gtag("consent", "update", {
-    analytics_storage: analytics ? "granted" : "denied",
-    ad_storage: ads ? "granted" : "denied",
-    ad_user_data: ads ? "granted" : "denied",
-    ad_personalization: ads ? "granted" : "denied",
-  });
-}
-
 export default function AnalyticsLoader() {
   useEffect(() => {
-    const gtmId = process.env.NEXT_PUBLIC_GTM_ID;
-
-    // Always inject GTM (with default denied)
-    injectGTM(gtmId);
-
-    // If the user already chose previously, apply it immediately
-    applySavedConsentIfAny();
+    injectGTM(process.env.NEXT_PUBLIC_GTM_ID);
   }, []);
 
   return null;
