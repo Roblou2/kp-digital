@@ -41,15 +41,21 @@ export default function CookieBanner() {
 
   function updateConsent({ analytics, ads }) {
     window.localStorage.setItem(STORAGE_KEY, JSON.stringify({ analytics, ads }));
-
-    // ✅ Proper Consent Mode update
+  
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ window.dataLayer.push(arguments); }
+  
     gtag("consent", "update", {
       analytics_storage: analytics ? "granted" : "denied",
       ad_storage: ads ? "granted" : "denied",
       ad_user_data: ads ? "granted" : "denied",
       ad_personalization: ads ? "granted" : "denied",
     });
+  
+   
+    window.dataLayer.push({ event: "kp_consent_applied" });
   }
+  
 
   const handleReject = () => {
     updateConsent({ analytics: false, ads: false });
