@@ -23,6 +23,15 @@ const [status, setStatus] = useState("idle"); // idle | loading | success | erro
       gdprConsent: formData.get("gdprConsent") === "on", 
     };
 
+
+  const pushLeadSubmitEvent = () => {
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: "lead_submit",
+      form_name: "contact_form",
+    });
+  };
+
     try {
       const res = await fetch("/api/contact", {
         method: "POST",
@@ -31,6 +40,10 @@ const [status, setStatus] = useState("idle"); // idle | loading | success | erro
       });
 
       if (!res.ok) throw new Error("Request failed");
+
+        // ✅ Fire GTM event ONLY when submission is successful
+  pushLeadSubmitEvent();
+
 
       setStatus("success");
       form.reset();

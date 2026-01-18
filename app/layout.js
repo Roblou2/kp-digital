@@ -20,9 +20,9 @@ export default function RootLayout({ children, metadata }) {
 
  </head>
       <body className="">
+              {/* Load GTM/GA only AFTER user accepts analytics */}
+              <AnalyticsLoader />
         {children}
-      {/* Load GTM/GA only AFTER user accepts analytics */}
-        <AnalyticsLoader />
 
             {/* Show cookie banner until user chooses */}
         <CookieBanner />

@@ -6,6 +6,8 @@ export default function Contact() {
 
   const [status, setStatus] = useState("idle"); // idle | loading | success | error
 
+
+  
 const handleSubmit = async (e) => {
   e.preventDefault();
   setStatus("loading");
@@ -20,6 +22,14 @@ const handleSubmit = async (e) => {
     gdprConsent: formData.get("gdprConsent") === "on",   
   };
 
+  const pushLeadSubmitEvent = () => {
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: "lead_submit",
+      form_name: "contact_form",
+    });
+  };
+
   try {
     const res = await fetch("/api/contact", {
       method: "POST",
@@ -27,7 +37,8 @@ const handleSubmit = async (e) => {
     });
 
     if (!res.ok) throw new Error("Request failed");
-
+  // ✅ Fire GTM event ONLY when submission is successful
+  pushLeadSubmitEvent();
     setStatus("success");
   } catch (err) {
     setStatus("error");

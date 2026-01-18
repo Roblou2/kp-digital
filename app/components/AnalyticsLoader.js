@@ -2,20 +2,18 @@
 
 import { useEffect } from "react";
 
-
 const STORAGE_KEY = "kp_consent_v1";
 
-
 function injectGTM(gtmId) {
-  
   if (!gtmId) return;
 
   // Prevent duplicates
   if (document.querySelector(`script[data-gtm-id="${gtmId}"]`)) return;
 
-  // Always define dataLayer before GTM loads (best practice)
+  // Define dataLayer BEFORE loading GTM
   window.dataLayer = window.dataLayer || [];
-  window.dataLayer = window.dataLayer || [];
+
+  // Default consent = denied (before GTM loads)
   window.dataLayer.push({
     event: "default_consent",
     analytics_storage: "denied",
@@ -23,10 +21,11 @@ function injectGTM(gtmId) {
     ad_user_data: "denied",
     ad_personalization: "denied",
   });
-  window.dataLayer.push({ "gtm.start": Date.now(), event: "gtm.js" });
-  
 
-  // Preserve GTM preview params if present (Tag Assistant)
+  // GTM start event
+  window.dataLayer.push({ "gtm.start": Date.now(), event: "gtm.js" });
+
+  // Preserve GTM preview params if present
   const qs = new URLSearchParams(window.location.search);
   const gtmPreview = qs.get("gtm_preview");
   const gtmAuth = qs.get("gtm_auth");
@@ -45,25 +44,39 @@ function injectGTM(gtmId) {
   document.head.appendChild(script);
 }
 
+function applySavedConsentIfAny() {
+  const raw = window.localStorage.getItem(STORAGE_KEY);
+  if (!raw) return;
+
+  let consent;
+  try {
+    consent = JSON.parse(raw);
+  } catch {
+    return;
+  }
+
+  const analytics = !!consent.analytics;
+  const ads = !!consent.ads;
+
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    event: "consent_update",
+    analytics_storage: analytics ? "granted" : "denied",
+    ad_storage: ads ? "granted" : "denied",
+    ad_user_data: ads ? "granted" : "denied",
+    ad_personalization: ads ? "granted" : "denied",
+  });
+}
+
 export default function AnalyticsLoader() {
   useEffect(() => {
-    if (typeof window === "undefined") return;
-
-    const raw = window.localStorage.getItem(STORAGE_KEY);
-    if (!raw) return;
-    
-    let consent;
-    try {
-      consent = JSON.parse(raw);
-    } catch {
-      return;
-    }
-    
-    if (!consent.analytics && !consent.ads) return; // load GTM only if something allowed
-    
-
     const gtmId = process.env.NEXT_PUBLIC_GTM_ID;
+
+    // Always inject GTM (default denied happens inside injectGTM)
     injectGTM(gtmId);
+
+    // If the user already chose previously, apply it immediately
+    applySavedConsentIfAny();
   }, []);
 
   return null;
