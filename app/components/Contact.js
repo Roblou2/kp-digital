@@ -172,6 +172,7 @@ const handleSubmit = async (e) => {
                   rows={4}
                      name="details" 
                      required 
+                     minLength={15}
                   className="
                     mt-2 block w-full rounded-md border border border-slate-700 bg-slate-300
                     px-3 py-2 text-md md:text-lg text-slate-900 placeholder:text-slate-900

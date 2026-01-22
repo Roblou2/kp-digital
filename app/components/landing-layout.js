@@ -222,6 +222,7 @@ border border-slate-200 rounded-lg w-full flex flex-col items-center justify-cen
     <textarea
       name="details"
       rows={3}
+      minLength={15}
       required
       className="
         mt-2 block w-full rounded-lg border border-slate-700 bg-slate-900
@@ -442,6 +443,7 @@ border border-slate-200 rounded-lg w-full flex flex-col items-center justify-cen
     <textarea
       name="details"
       rows={3}
+      minLength={15}
       required
       className="
         mt-2 block w-full rounded-lg border border-slate-700 bg-slate-900
@@ -650,6 +652,7 @@ that actually works.
     <textarea
       name="details"
       rows={3}
+      minLength={15}
       required
       className="
         mt-2 block w-full rounded-lg border border-slate-700 bg-slate-900
@@ -862,6 +865,7 @@ border border-slate-200 rounded-lg w-full flex flex-col items-center justify-cen
     <textarea
       name="details"
       rows={3}
+      minLength={15}
       required
       className="field
         mt-2 block w-full rounded-lg bg-slate-900
