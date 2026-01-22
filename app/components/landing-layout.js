@@ -10,6 +10,12 @@ const [status, setStatus] = useState("idle"); // idle | loading | success | erro
 
   async function handleSubmit(e) {
     e.preventDefault();
+
+      // ✅ Native HTML validation gate
+  if (!e.currentTarget.checkValidity()) {
+    e.currentTarget.reportValidity();
+    return;
+  }
     setStatus("loading");
 
     const form = e.currentTarget;
@@ -18,8 +24,9 @@ const [status, setStatus] = useState("idle"); // idle | loading | success | erro
     const payload = {
       name: formData.get("name"),
       email: formData.get("email"),
-      phone: formData.get("phone"),
-      details: formData.get("details"),
+      phone: formData.get("phone") || "",
+      details: formData.get("details") || "",
+      
        gdprConsent: formData.get("gdprConsent") === "on", 
     };
 

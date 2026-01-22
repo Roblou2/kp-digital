@@ -10,9 +10,20 @@ export default function Contact() {
   
 const handleSubmit = async (e) => {
   e.preventDefault();
+
+    // If any native HTML validation fails, stop here
+    if (!e.currentTarget.checkValidity()) {
+      e.currentTarget.reportValidity();
+      return;
+    }
   setStatus("loading");
 
+
   const formData = new FormData(e.currentTarget);
+
+
+
+  setStatus("loading");
 
   const payload = {
     name: formData.get("name"),
