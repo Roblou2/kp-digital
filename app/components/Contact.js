@@ -165,11 +165,13 @@ const handleSubmit = async (e) => {
               {/* Message */}
               <div className="mb-6">
                 <label className="block text-md md:text-lg font-medium text-slate-200">
-                  What do you need help with?
+                  What do you need help with?    <span className="text-red-600">*</span>
                 </label>
+            
                 <textarea
                   rows={4}
-                     name="details"  
+                     name="details" 
+                     required 
                   className="
                     mt-2 block w-full rounded-md border border border-slate-700 bg-slate-300
                     px-3 py-2 text-md md:text-lg text-slate-900 placeholder:text-slate-900
