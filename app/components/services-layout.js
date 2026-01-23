@@ -58,7 +58,7 @@ const [status, setStatus] = useState("idle"); // idle | loading | success | erro
   const pushLeadSubmitEvent = () => {
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push({
-      event: "lead_submit",
+      event: "seo_lead_submit",
       form_name: "contact_form",
     });
   };
