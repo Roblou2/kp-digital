@@ -14,11 +14,55 @@ function getTransporter() {
   });
 }
 
+// ✅ ADD THIS HELPER (place it under getTransporter, above POST)
+async function verifyRecaptcha(token) {
+  if (!process.env.RECAPTCHA_SECRET_KEY) {
+    throw new Error("Missing RECAPTCHA_SECRET_KEY env var");
+  }
+
+  const verifyRes = await fetch("https://www.google.com/recaptcha/api/siteverify", {
+    method: "POST",
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: new URLSearchParams({
+      secret: process.env.RECAPTCHA_SECRET_KEY,
+      response: token,
+    }),
+  });
+
+  return await verifyRes.json();
+}
+
 export async function POST(request) {
   console.log("POST /api/contact hit");
 
   try {
     const body = await request.json();
+
+    // ✅ ADD THIS BLOCK RIGHT HERE (immediately after request.json())
+    const { recaptchaToken, recaptchaAction } = body;
+
+    if (!recaptchaToken) {
+      return NextResponse.json({ error: "Missing reCAPTCHA token." }, { status: 400 });
+    }
+
+    const recaptchaResult = await verifyRecaptcha(recaptchaToken);
+
+    if (!recaptchaResult?.success) {
+      return NextResponse.json({ error: "reCAPTCHA verification failed." }, { status: 400 });
+    }
+
+    // Optional but recommended: make sure action matches what you sent from the client
+    if (recaptchaResult.action && recaptchaAction && recaptchaResult.action !== recaptchaAction) {
+      return NextResponse.json({ error: "reCAPTCHA action mismatch." }, { status: 400 });
+    }
+
+    // v3 score check (tune this threshold later)
+    const score = typeof recaptchaResult.score === "number" ? recaptchaResult.score : null;
+    if (score !== null && score < 0.5) {
+      return NextResponse.json({ error: "reCAPTCHA score too low." }, { status: 400 });
+    }
+
+    // ✅ NOW continue with your existing fields
     const { name, email, phone, details } = body;
 
     console.log("Payload:", { name, email, phone, details });

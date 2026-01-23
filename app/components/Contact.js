@@ -2,9 +2,30 @@
 import Image from 'next/image'
 import { useState } from "react";
 
+async function getRecaptchaToken(action) {
+  const siteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY;
+
+  if (!siteKey) throw new Error("Missing NEXT_PUBLIC_RECAPTCHA_SITE_KEY");
+  if (typeof window === "undefined") throw new Error("No window");
+  if (!window.grecaptcha) throw new Error("reCAPTCHA not loaded yet");
+
+  return await new Promise((resolve, reject) => {
+    window.grecaptcha.ready(async () => {
+      try {
+        const token = await window.grecaptcha.execute(siteKey, { action });
+        resolve(token);
+      } catch (e) {
+        reject(e);
+      }
+    });
+  });
+}
+
+
 export default function Contact() {
 
   const [status, setStatus] = useState("idle"); // idle | loading | success | error
+
 
 
   
@@ -25,12 +46,16 @@ const handleSubmit = async (e) => {
 
   setStatus("loading");
 
+  const recaptchaToken = await getRecaptchaToken("contact_form");
+
   const payload = {
     name: formData.get("name"),
     email: formData.get("email"),
     phone: formData.get("phone") || "",
     details: formData.get("details") || "",
-    gdprConsent: formData.get("gdprConsent") === "on",   
+    gdprConsent: formData.get("gdprConsent") === "on", 
+    recaptchaToken,
+    recaptchaAction: "contact_form",  
   };
 
   const pushLeadSubmitEvent = () => {
@@ -40,6 +65,9 @@ const handleSubmit = async (e) => {
       form_name: "contact_form",
     });
   };
+
+
+
 
   try {
     const res = await fetch("/api/contact", {

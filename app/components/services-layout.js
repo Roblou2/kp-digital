@@ -5,22 +5,53 @@ import {faBars} from '@fortawesome/free-solid-svg-icons'
 import Link from "next/link";
 import { useState } from "react";
 
+async function getRecaptchaToken(action) {
+  const siteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY;
+
+  if (!siteKey) throw new Error("Missing NEXT_PUBLIC_RECAPTCHA_SITE_KEY");
+  if (typeof window === "undefined") throw new Error("No window");
+  if (!window.grecaptcha) throw new Error("reCAPTCHA not loaded yet");
+
+  return await new Promise((resolve, reject) => {
+    window.grecaptcha.ready(async () => {
+      try {
+        const token = await window.grecaptcha.execute(siteKey, { action });
+        resolve(token);
+      } catch (e) {
+        reject(e);
+      }
+    });
+  });
+}
+
 const ServicesLayout = ({children, ...props}) => {
 const [status, setStatus] = useState("idle"); // idle | loading | success | error
 
   async function handleSubmit(e) {
     e.preventDefault();
+
+
+      // ✅ Native HTML validation gate
+      if (!e.currentTarget.checkValidity()) {
+        e.currentTarget.reportValidity();
+        return;
+      }
+
+
     setStatus("loading");
 
     const form = e.currentTarget;
     const formData = new FormData(form);
+    const recaptchaToken = await getRecaptchaToken("contact_form");
 
     const payload = {
       name: formData.get("name"),
       email: formData.get("email"),
-      phone: formData.get("phone"),
-      details: formData.get("details"),
+      phone: formData.get("phone") || "",
+      details: formData.get("details") || "",      
       gdprConsent: formData.get("gdprConsent") === "on", 
+      recaptchaToken,
+      recaptchaAction: "contact_form",
     };
 
 
@@ -316,11 +347,13 @@ border border-slate-200 rounded-lg w-full flex flex-col items-center justify-cen
   {/* Details */}
   <div className="mb-6">
     <label className="block text-sm font-medium text-black">
-      Message
+      Message <span className="text-red-600">*</span>
     </label>
     <textarea
       name="details"
       rows={3}
+      minLength={15}
+      required
       className="
         mt-2 block w-full rounded-lg border border-slate-700 bg-slate-900
         px-3 py-2 text-sm text-slate-50
@@ -578,11 +611,13 @@ border border-slate-200 rounded-lg w-full flex flex-col items-center justify-cen
   {/* Details */}
   <div className="mb-6">
     <label className="block text-sm font-medium text-black">
-      Message
+      Message <span className="text-red-600">*</span>
     </label>
     <textarea
       name="details"
       rows={3}
+      minLength={15}
+      required
       className="
         mt-2 block w-full rounded-lg border border-slate-700 bg-slate-900
         px-3 py-2 text-sm text-slate-50
@@ -790,11 +825,13 @@ that actually works.
   {/* Details */}
   <div className="mb-6">
     <label className="block text-sm font-medium text-black">
-      Message
+      Message <span className="text-red-600">*</span>
     </label>
     <textarea
       name="details"
       rows={3}
+      minLength={15}
+      required
       className="
         mt-2 block w-full rounded-lg border border-slate-700 bg-slate-900
         px-3 py-2 text-sm text-slate-50
@@ -1003,11 +1040,13 @@ border border-slate-200 rounded-lg w-full flex flex-col items-center justify-cen
   {/* Details */}
   <div className="mb-6">
     <label className="block text-sm font-medium text-black">
-      Message
+      Message <span className="text-red-600">*</span>
     </label>
     <textarea
       name="details"
       rows={3}
+      minLength={15}
+      required
       className="field
         mt-2 block w-full rounded-lg bg-slate-900
         px-3 py-2 text-sm text-slate-50
