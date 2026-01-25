@@ -42,6 +42,7 @@ export default function Services() {
         bg-center
         bg-fixed
       "
+      id="services"
     >
       <div
         className="
