@@ -41,7 +41,8 @@ const pricing = [
 
 export default function Pricing() {
   return (
-    <section className="border-t border-slate-800 bg-slate-950">
+    <section className="border-t border-slate-800 bg-slate-950"
+    id="pricing">
       <div
         className="
           py-32
