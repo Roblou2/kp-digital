@@ -17,7 +17,7 @@ const benefits = [
 
 export default function Benefits() {
   return (
-    <section className="border-t border-slate-800 bg-zinc-50">
+    <section className="border-t border-slate-800 bg-zinc-50" id="benefits">
       <div
         className="
           py-28 lg:mt-12
