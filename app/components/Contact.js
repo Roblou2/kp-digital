@@ -245,7 +245,7 @@ const handleSubmit = async (e) => {
               <button
                    type="submit"
                 disabled={status === "loading"}
-                className="
+                className="contact-submit
                   inline-flex w-full items-center justify-center
                   rounded-md bg-red-600 px-4 py-2.5
                   text-md md:text-lg font-semibold text-white
