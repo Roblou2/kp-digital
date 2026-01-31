@@ -140,7 +140,7 @@ const handleSubmit = async (e) => {
           <div className="md:w-[60%]">
             <form
             onSubmit={handleSubmit}
-              className="
+              className="lower-contact-form
                 rounded-2xl border border-slate-200 bg-slate-900
                 p-6 md:p-8
                 shadow-[0_12px_40px_-10px_rgba(0,0,0,0.12)]

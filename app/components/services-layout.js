@@ -544,7 +544,7 @@ border border-slate-200 rounded-lg w-full flex flex-col items-center justify-cen
             <form
                       onSubmit={handleSubmit}
   className="rounded-2xl border bg-white
-    p-4 my-[5%] w-[90%]
+    p-4 my-[5%] w-[90%] upper-contact-form
     shadow-lg shadow-black/30
     backdrop-blur">
     
@@ -756,7 +756,7 @@ that actually works.
 
            <form
              onSubmit={handleSubmit}
-  className="
+  className="upper-contact-form
     rounded-2xl border border-slate-800 bg-white
     p-4 mx-[3rem] relative mt-[-2rem]
     shadow-md shadow-black/30
@@ -973,7 +973,7 @@ border border-slate-200 rounded-lg w-full flex flex-col items-center justify-cen
             <form
             onSubmit={handleSubmit}
   className="rounded-2xl border bg-white
-    p-4 my-[5%] w-[90%]
+    p-4 my-[5%] w-[90%] upper-contact-form
     shadow-lg shadow-black/30
     backdrop-blur">
     
