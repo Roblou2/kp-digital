@@ -245,13 +245,14 @@ const handleSubmit = async (e) => {
               <button
                    type="submit"
                 disabled={status === "loading"}
-                className="contact-submit
+                className="
                   inline-flex w-full items-center justify-center
                   rounded-md bg-red-600 px-4 py-2.5
                   text-md md:text-lg font-semibold text-white
                   shadow-sm transition-colors
                   hover:bg-slate-800
                 "
+                id="contact-submit"
               >
             
                 {status === "loading" ? "Sending…" : "Send message"}
