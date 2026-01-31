@@ -392,6 +392,7 @@ border border-slate-200 rounded-lg w-full flex flex-col items-center justify-cen
       transition-colors
       hover:bg-red-500
     "
+    id="upper-contact-form"
   >
       {status === "loading" ? "Sending…" : "Get in touch"}
   </button>
@@ -975,7 +976,7 @@ border border-slate-200 rounded-lg w-full flex flex-col items-center justify-cen
             <form
             onSubmit={handleSubmit}
   className="rounded-2xl border bg-white
-    p-4 my-[5%] w-[90%] upper-contact-form
+    p-4 my-[5%] w-[90%] 
     shadow-lg shadow-black/30
     backdrop-blur">
     
