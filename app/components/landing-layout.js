@@ -217,6 +217,7 @@ border border-slate-200 rounded-lg w-full flex flex-col items-center justify-cen
       type="email"
       name="email"
       required
+      id="email-field"
       className="
         mt-2 block w-full rounded-lg border border-slate-700 bg-slate-900
         px-3 py-2 text-sm text-slate-50
