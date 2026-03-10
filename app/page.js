@@ -5,14 +5,14 @@ import Layout from './components/layout.js'
 import Head from 'next/head';
 
 export const metadata = {
-  title: "Performance marketing agency | KP Digital",
+  title: "Performance marketing agency | A1 Webs",
   description: "We are the first choice digital marketing agency. Learn how our digital marketing services can grow your business",
 
   openGraph: {
-    title: "Performance marketing agency | KP Digital",
+    title: "Performance marketing agency | A1 Webs",
     description: "We are the first choice digital marketing agency. Learn how our digital marketing services can grow your business",
-    url: "https://killerperformancedigital.com",
-    siteName: "Killer Performance Digital",
+    url: "https://www.ano1webs.com",
+    siteName: "A1 Webs",
     images: [
       {
         url: "/images/killer-logo-black-bg-250.jpg",
@@ -27,7 +27,7 @@ export const metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: "Performance marketing agency | KP Digital",
+    title: "Performance marketing agency | A1 Webs",
     description: "We are the first choice digital marketing agency. Learn how our digital marketing services can grow your business",
     images: ["/images/killer-logo-black-bg-250.jpg"],
   },
@@ -39,7 +39,7 @@ export default async function Home() {
   return (
    <>
      <Head>
-        <title>Performance Marketing Agency | KP Digital</title>
+        <title>Performance Marketing Agency | A1 Webs</title>
         <meta name="description" content="We create memorable digital experiences for your brand. 
   Contact us today to learn more."/>
         <meta name="keywords" content="marketing agency, Google Ads help, data analytics setup, digital marketing agency" />
