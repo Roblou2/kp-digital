@@ -32,7 +32,7 @@ export default function CookieBanner() {
   const [analyticsToggle, setAnalyticsToggle] = useState(true);
 
   // ✅ IMPORTANT: default marketing OFF (your current code had this true)
-  const [adsToggle, setAdsToggle] = useState(true);
+  const [adsToggle, setAdsToggle] = useState(false);
 
   const [dismissed, setDismissed] = useState(false);
 
