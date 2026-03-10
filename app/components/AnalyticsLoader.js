@@ -2,7 +2,7 @@
 
 import { useEffect } from "react";
 
-const STORAGE_KEY = "kp_consent_v1";
+const STORAGE_KEY = "a1_consent_v1";
 
 function gtag() {
   window.dataLayer = window.dataLayer || [];

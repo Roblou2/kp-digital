@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from "react";
 
-const STORAGE_KEY = "kp_consent_v1";
+const STORAGE_KEY = "a1_consent_v1";
 
 function gtag() {
   window.dataLayer = window.dataLayer || [];
@@ -53,7 +53,7 @@ export default function CookieBanner() {
     });
   
    
-    window.dataLayer.push({ event: "kp_consent_applied" });
+    window.dataLayer.push({ event: "a1_consent_applied" });
   }
   
 
