@@ -86,10 +86,10 @@ fill={true}
       <div className="flex flex-row items-center justify-between">
          
            <Link href="/"><Image 
-     src="/images/killer-logo-black-bg-500.png"
+     src="/images/a1-webs-logo-500.png"
      width={120}
      height={120}
-       alt="Killer performance digital logo"
+       alt="A1 webs logo"
        
        /> </Link>  
      
@@ -176,10 +176,10 @@ fill={true}
         
                
                <Link href="/">  <Image 
-      src="/images/killer-logo-black-bg-500.png"
+      src="/images/a1-webs-logo-500.png"
       width={120}
       height={120}
-       alt="Killer performance digital logo"
+       alt="A1 webs logo"
  
        /></Link>
      
@@ -271,10 +271,10 @@ fill={true}
 
                
           <Link href="/"><Image 
-     src="/images/killer-logo-black-bg-500.png"
+     src="/images/a1-webs-logo-500.png"
      height={80}
      width={80}
-       alt="Killer performance digital logo"
+       alt="A1 webs logo"
 
        /> </Link> 
     
@@ -325,10 +325,10 @@ fill={true}
       
                
           <Link href="/"><Image 
-      src="/images/killer-logo-black-bg-500.png"
+      src="/images/a1-webs-logo-500.png"
       height={80}
       width={80}
-       alt="Killer performance digital logo"
+       alt="A1 webs logo"
        /> </Link>
     
     <div className="text-2xl">
