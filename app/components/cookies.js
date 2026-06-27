@@ -10,7 +10,7 @@ xl:px-[15%] sm:px-[3rem] lg:px-[10rem]"
       </h1>
 
       <p className="mt-4 text-slate-300">
-        This Cookies Policy explains how Killer Performance Digital uses cookies
+        This Cookies Policy explains how A1 Webs uses cookies
         and similar technologies on this website.
       </p>
 

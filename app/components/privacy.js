@@ -9,7 +9,7 @@ xl:px-[15%] sm:px-[3rem] lg:px-[10rem]">
       </h1>
 
       <p className="mt-4 text-slate-300">
-        This page explains how Killer Performance Digital collects, uses and
+        This page explains how A1 Webs collects, uses and
         protects your information when you contact me or use this website.
       </p>
 
@@ -18,7 +18,7 @@ xl:px-[15%] sm:px-[3rem] lg:px-[10rem]">
         1. Who I am
       </h2>
       <p className="mt-3 text-slate-300">
-        Killer Performance Digital provides copywriting and marketing services
+        A1 Webs provides copywriting and marketing services
         for small and medium-sized businesses.
       </p>
 
@@ -145,7 +145,7 @@ xl:px-[15%] sm:px-[3rem] lg:px-[10rem]">
       </p>
 
       <p className="mt-2 text-slate-100 font-semibold">
-        hello@killerperformancedigital.com
+        hello@a1webs.com
       </p>
 
       {/* 9 */}
