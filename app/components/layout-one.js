@@ -336,17 +336,13 @@ right-[3rem] left-[3rem]">
 
           <ul
   className="font-sans font-semibold text-white
-       text-2xl relative w-[100%] leading-3 flex flex-wrap gap-y-6 gap-x-4"
+       text-xl relative w-[100%] leading-3 flex flex-wrap gap-y-4 gap-x-4"
 >
   <li className="flex items-center gap-1">
     <span>•</span>
     <span>Web Design & development</span>
   </li>
 
-  <li className="flex items-center gap-1 neon-red">
-    <span>•</span>
-    <span>Landing pages</span>
-  </li>
 
   <li className="flex items-center gap-1">
     <span>•</span>
@@ -358,10 +354,6 @@ right-[3rem] left-[3rem]">
     <span>Wordpress support</span>
   </li>
 
-  <li className="flex items-center gap-1">
-    <span>•</span>
-    <span>Analytics & conversion tracking</span>
-  </li>
 
   <li className="flex items-center gap-1 neon-red">
     <span>•</span>
